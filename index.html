@@ -1,0 +1,1958 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>সৌখিন কাঁথা | SHOUKHIN ATELIER — হেরিটেজ নকশী কাঁথা ও প্রিমিয়াম হস্তশিল্প</title>
+    <meta name="description" content="শত বছরের ঐতিহ্য ও নিখুঁত আভিজাত্যে তৈরি রাজকীয় নকশী কাঁথা এবং এক্সক্লুসিভ হাতে তৈরি হস্তশিল্প।">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Hind+Siliguri:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: {
+                            50: '#FDFBF7',
+                            100: '#FAF6EE',
+                            200: '#F4ECE0',
+                            300: '#EAE0CE',
+                        },
+                        terracotta: {
+                            500: '#B85042',
+                            600: '#9C3D32',
+                            700: '#7E2D24',
+                            800: '#611F18',
+                        },
+                        gold: {
+                            300: '#E6CA65',
+                            400: '#D4AF37',
+                            500: '#B89726',
+                            600: '#997D1E',
+                        },
+                        charcoal: {
+                            800: '#23201D',
+                            900: '#171412',
+                            950: '#0E0C0B',
+                        },
+                        indigoHeritage: '#1A2938',
+                    },
+                    fontFamily: {
+                        serifBengali: ['Hind Siliguri', 'serif'],
+                        royalSerif: ['"Cormorant Garamond"', 'serif'],
+                        cinzel: ['"Cinzel"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'Hind Siliguri', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom luxury touches */
+        ::selection {
+            background-color: #9C3D32;
+            color: #FAF6EE;
+        }
+
+        /* Subtle scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FAF6EE;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D4AF37;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9C3D32;
+        }
+
+        /* Gold Foil Shimmer Animation */
+        .gold-shimmer {
+            background: linear-gradient(90deg, #B89726 0%, #F5DE88 50%, #B89726 100%);
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: shine 4s linear infinite;
+        }
+
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        /* Grain texture overlay */
+        .vintage-grain {
+            background-image: radial-gradient(rgba(35, 32, 29, 0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+
+        .stitch-border {
+            border: 2px dashed #D4AF37;
+        }
+    </style>
+</head>
+<body class="bg-cream-100 text-charcoal-900 font-sans antialiased selection:bg-terracotta-600 selection:text-white vintage-grain">
+
+    <!-- DEMO CONTROLLER PILL (Allows user to customize the brand name & settings live!) -->
+    <div id="demoPill" class="bg-charcoal-950 text-cream-100 py-2 px-4 border-b border-gold-400/40 text-xs sticky top-0 z-50 flex flex-wrap items-center justify-between gap-3 shadow-md">
+        <div class="flex items-center gap-2">
+            <span class="inline-flex items-center justify-center w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="font-semibold text-gold-400 tracking-wider uppercase text-[11px]">লাইভ ডেমো স্টুডিও:</span>
+            <span class="hidden sm:inline text-cream-200/80">বিলিয়ন ডলার লাক্সারি ব্র্যান্ড আর্কিটেকচার</span>
+        </div>
+        <div class="flex items-center gap-2">
+            <label for="brandNameInput" class="text-cream-300 hidden md:inline">ব্র্যান্ডের নাম ট্রাই করুন:</label>
+            <div class="relative">
+                <input type="text" id="brandNameInput" value="সৌখিন কাঁথা" 
+                    placeholder="আপনার ব্র্যান্ডের নাম লিখুন..." 
+                    class="bg-charcoal-800 border border-gold-400/40 text-cream-50 rounded px-2.5 py-1 text-xs focus:outline-none focus:border-gold-300 w-36 sm:w-44 transition-all">
+                <button onclick="updateBrandName()" class="bg-gold-500 hover:bg-gold-400 text-charcoal-950 font-bold px-2 py-1 rounded text-xs ml-1 transition">
+                    সেট
+                </button>
+            </div>
+            <div class="h-4 w-[1px] bg-charcoal-800 mx-1"></div>
+            <!-- Currency Switcher -->
+            <button onclick="toggleCurrency()" id="currencyBtn" class="border border-cream-300/30 px-2 py-0.5 rounded text-cream-200 hover:text-gold-400 font-mono transition text-xs">
+                মুদ্রা: ৳ BDT
+            </button>
+            <!-- Language Switcher -->
+            <button onclick="toggleLanguage()" id="langBtn" class="bg-terracotta-700 hover:bg-terracotta-600 text-white px-2 py-0.5 rounded text-xs transition">
+                English
+            </button>
+        </div>
+    </div>
+
+    <!-- TOP ANNOUNCEMENT BANNER -->
+    <div class="bg-terracotta-700 text-cream-100 py-1.5 px-4 text-xs tracking-wider text-center flex items-center justify-center gap-2 font-medium">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-gold-300"></i>
+        <span id="announcementText">প্রতিটি কাঁথার সাথে প্রদান করা হয় মাস্টার কারিগরের স্বাক্ষর সংবলিত 'হেরিটেজ অথেন্টিসিটি সার্টিফিকেট' • ফ্রি হোম ডেলিভারি ও প্রিমিয়াম উডেন গিফট বক্স</span>
+        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-gold-300"></i>
+    </div>
+
+    <!-- MAIN LUXURY HEADER / NAVBAR -->
+    <header class="sticky top-8 z-40 bg-cream-50/95 backdrop-blur-md border-b border-cream-300/70 transition-all duration-300 shadow-sm" id="mainHeader">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 sm:h-24">
+                
+                <!-- Left Nav Links (Desktop) -->
+                <nav class="hidden lg:flex items-center gap-7 text-[14px] font-medium tracking-wide">
+                    <a href="#collections" class="hover:text-terracotta-600 transition-colors relative group py-1">
+                        কালেকশন
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-terracotta-600 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#craftsmanship" class="hover:text-terracotta-600 transition-colors relative group py-1">
+                        বুনন ও ঐতিহ্য
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-terracotta-600 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#bespoke" class="hover:text-terracotta-600 transition-colors relative group py-1 text-terracotta-700 font-semibold flex items-center gap-1.5">
+                        <i data-lucide="scissors" class="w-3.5 h-3.5 text-gold-500"></i>
+                        কাস্টম অর্ডার (Bespoke)
+                    </a>
+                    <a href="#artisan-story" class="hover:text-terracotta-600 transition-colors relative group py-1">
+                        কারিগরদের গল্প
+                    </a>
+                    <a href="#certificate-section" class="hover:text-terracotta-600 transition-colors relative group py-1">
+                        সার্টিফিকেট
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-charcoal-900 hover:text-terracotta-600 focus:outline-none">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+
+                <!-- Center: Royal Brand Logo & Monogram -->
+                <div class="flex flex-col items-center justify-center text-center cursor-pointer" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+                    <div class="flex items-center gap-2">
+                        <!-- Custom Royal Needle & Lotus SVG Emblem -->
+                        <svg class="w-6 h-6 sm:w-7 sm:h-7 text-gold-500" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="19" stroke="#D4AF37" stroke-width="1.5" stroke-dasharray="3 3"/>
+                            <path d="M20 7L23 16L32 20L23 24L20 33L17 24L8 20L17 16L20 7Z" fill="#9C3D32"/>
+                            <circle cx="20" cy="20" r="3" fill="#D4AF37"/>
+                        </svg>
+                        <span id="brandLogoText" class="font-serifBengali font-bold text-2xl sm:text-3xl text-charcoal-900 tracking-tight">
+                            সৌখিন কাঁথা
+                        </span>
+                    </div>
+                    <span class="font-cinzel text-[9px] sm:text-[10px] tracking-[0.28em] text-gold-600 uppercase font-semibold mt-0.5">
+                        L'Atelier Du Kantha • Haute Couture
+                    </span>
+                </div>
+
+                <!-- Right Action Icons (Search, Wishlist, Concierge, Cart) -->
+                <div class="flex items-center gap-4 sm:gap-5">
+                    <!-- Search Trigger -->
+                    <button onclick="toggleSearchModal()" class="p-2 text-charcoal-800 hover:text-terracotta-600 transition relative" title="সার্চ করুন">
+                        <i data-lucide="search" class="w-5 h-5"></i>
+                    </button>
+                    
+                    <!-- VIP WhatsApp Concierge -->
+                    <a href="https://wa.me/8801700000000?text=Hello%2C%20I%20am%20interested%20in%20Shoukhin%20Kantha%20Luxury%20Collections" target="_blank" class="hidden sm:flex items-center gap-1.5 text-xs bg-cream-200/90 hover:bg-cream-300 text-charcoal-800 px-3 py-1.5 rounded-full border border-gold-400/40 transition shadow-sm font-medium">
+                        <i data-lucide="message-circle" class="w-4 h-4 text-emerald-600"></i>
+                        <span>ভিআইপি কনসিয়ার্জ</span>
+                    </a>
+
+                    <!-- Cart Drawer Trigger with Badge -->
+                    <button onclick="toggleCartDrawer()" class="p-2 text-charcoal-800 hover:text-terracotta-600 transition relative flex items-center" title="শপিং ব্যাগ">
+                        <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                        <span id="cartCountBadge" class="absolute -top-1 -right-1 bg-terracotta-600 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                            1
+                        </span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobileMenu" class="hidden lg:hidden border-t border-cream-300 bg-cream-50 px-6 py-5 space-y-4 shadow-xl">
+            <a href="#collections" onclick="toggleMobileMenu()" class="block text-base font-medium hover:text-terracotta-600">কালেকশন</a>
+            <a href="#craftsmanship" onclick="toggleMobileMenu()" class="block text-base font-medium hover:text-terracotta-600">বুনন ও ঐতিহ্য</a>
+            <a href="#bespoke" onclick="toggleMobileMenu()" class="block text-base font-medium text-terracotta-700 font-semibold">কাস্টম অর্ডার (Bespoke)</a>
+            <a href="#artisan-story" onclick="toggleMobileMenu()" class="block text-base font-medium hover:text-terracotta-600">কারিগরদের গল্প</a>
+            <a href="#certificate-section" onclick="toggleMobileMenu()" class="block text-base font-medium hover:text-terracotta-600">হেরিটেজ সার্টিফিকেট</a>
+            <div class="pt-3 border-t border-cream-200 flex items-center justify-between">
+                <span class="text-xs text-charcoal-800">কল বা হোয়াটসঅ্যাপে যোগাযোগ:</span>
+                <span class="text-xs font-bold text-terracotta-700">+880 1700-000000</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- SEARCH MODAL OVERLAY -->
+    <div id="searchModal" class="fixed inset-0 bg-charcoal-950/80 backdrop-blur-sm z-50 hidden flex items-start justify-center pt-24 px-4 transition-all">
+        <div class="bg-cream-50 w-full max-w-2xl rounded-2xl p-6 shadow-2xl border border-gold-400/40 relative animate-fadeIn">
+            <button onclick="toggleSearchModal()" class="absolute top-5 right-5 text-charcoal-800 hover:text-terracotta-600">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <h3 class="font-serifBengali text-xl font-bold mb-3 text-charcoal-900">রাজকীয় কাঁথা খুঁজুন</h3>
+            <div class="relative">
+                <input type="text" id="searchInput" oninput="handleSearch(this.value)" placeholder="যেমন: তুঁত সিল্ক, রাজকীয় ময়ূরপঙ্খী, কটন বেডস্প্রেড, বিয়ের উপহার..." 
+                    class="w-full bg-cream-100 border-2 border-gold-400/50 rounded-xl px-4 py-3 pl-11 text-sm focus:outline-none focus:border-terracotta-600">
+                <i data-lucide="search" class="w-5 h-5 text-gold-600 absolute left-3.5 top-3.5"></i>
+            </div>
+            <!-- Search Suggestions -->
+            <div class="mt-4 flex flex-wrap gap-2 text-xs">
+                <span class="text-charcoal-800 font-medium">জনপ্রিয় সার্চ:</span>
+                <button onclick="quickSearch('তুঁত সিল্ক')" class="bg-cream-200 hover:bg-gold-300/40 px-2.5 py-1 rounded-full text-charcoal-800">তুঁত সিল্ক</button>
+                <button onclick="quickSearch('ময়ূরপঙ্খী')" class="bg-cream-200 hover:bg-gold-300/40 px-2.5 py-1 rounded-full text-charcoal-800">ময়ূরপঙ্খী</button>
+                <button onclick="quickSearch('ওয়াল আর্ট')" class="bg-cream-200 hover:bg-gold-300/40 px-2.5 py-1 rounded-full text-charcoal-800">ওয়াল আর্ট</button>
+                <button onclick="quickSearch('খাদি কটন')" class="bg-cream-200 hover:bg-gold-300/40 px-2.5 py-1 rounded-full text-charcoal-800">খাদি কটন</button>
+            </div>
+            <!-- Live Results Container -->
+            <div id="searchResultsList" class="mt-4 max-h-60 overflow-y-auto space-y-2 border-t border-cream-300/50 pt-3">
+                <!-- Dynamically filled -->
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO SECTION: THE LUXURY EDITORIAL SHOWCASE -->
+    <section class="relative overflow-hidden pt-8 pb-16 lg:py-24 border-b border-cream-300">
+        <!-- Subtle Background Decorative Motif -->
+        <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-gold-400/10 blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-terracotta-600/10 blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                
+                <!-- Left Content: Editorial Typography -->
+                <div class="lg:col-span-7 space-y-6 text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-terracotta-700/10 border border-terracotta-700/20 text-terracotta-700 text-xs tracking-wider uppercase font-semibold">
+                        <i data-lucide="crown" class="w-3.5 h-3.5 text-gold-500"></i>
+                        <span>বাংলার চারশত বছরের রাজকীয় ঐতিহ্য • অটোগ্রাফড এডিশন</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serifBengali font-bold text-charcoal-900 leading-[1.18] tracking-tight">
+                        প্রতিটি সুতোয় গাঁথা এক একটি জীবনের গল্প ও 
+                        <span class="gold-shimmer font-royalSerif italic font-normal block sm:inline">অমূল্য আভিজাত্য</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-charcoal-800/80 leading-relaxed font-normal max-w-2xl">
+                        শতভাগ খাঁটি তুঁত সিল্ক ও ভিন্টেজ খাদি কাপড়ে গ্রামীণ নারী কারিগরদের ১৪০+ ঘণ্টার নিখুঁত হস্তশিল্পে তৈরি রাজকীয় নকশী কাঁথা। আপনার বসার ঘর ও শয়নকক্ষে নিয়ে আসুন বংশপরম্পরায় টিকে থাকার মতো চিরন্তন আর্টপিস।
+                    </p>
+
+                    <!-- Trust Checklist -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 text-xs font-medium text-charcoal-800">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 flex-shrink-0"></i>
+                            <span>১০০% হাতে তৈরি গ্যারান্টি</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 flex-shrink-0"></i>
+                            <span>কারিগরের স্বাক্ষরযুক্ত সনদ</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 flex-shrink-0"></i>
+                            <span>ন্যাচারাল আজো-ফ্রি ডাই</span>
+                        </div>
+                    </div>
+
+                    <!-- Call to Actions -->
+                    <div class="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                        <a href="#collections" class="bg-terracotta-700 hover:bg-terracotta-800 text-cream-50 px-8 py-4 rounded-xl text-center font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 group">
+                            <span>এক্সক্লুসিভ কালেকশন দেখুন</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="#bespoke" class="border-2 border-charcoal-900/30 hover:border-gold-500 hover:bg-gold-500/10 text-charcoal-900 px-7 py-3.5 rounded-xl text-center font-medium transition-all duration-300 flex items-center justify-center gap-2">
+                            <i data-lucide="sparkles" class="w-4 h-4 text-gold-600"></i>
+                            <span>কাস্টম কাথা অর্ডার (Bespoke)</span>
+                        </a>
+                    </div>
+
+                    <!-- Micro Social Proof Metric Row -->
+                    <div class="pt-6 border-t border-cream-300 flex items-center gap-8">
+                        <div>
+                            <div class="text-2xl font-bold font-royalSerif text-charcoal-900">৪৫০+</div>
+                            <div class="text-[11px] text-charcoal-800/70 font-medium">পল্লী নারী কারিগর</div>
+                        </div>
+                        <div class="h-8 w-[1px] bg-cream-300"></div>
+                        <div>
+                            <div class="text-2xl font-bold font-royalSerif text-charcoal-900">১৮০+ ঘণ্টা</div>
+                            <div class="text-[11px] text-charcoal-800/70 font-medium">প্রতি পিসে হাতের কাজ</div>
+                        </div>
+                        <div class="h-8 w-[1px] bg-cream-300"></div>
+                        <div>
+                            <div class="text-2xl font-bold font-royalSerif text-gold-600 flex items-center gap-1">
+                                <span>৪.৯</span>
+                                <i data-lucide="star" class="w-4 h-4 fill-gold-500 text-gold-500"></i>
+                            </div>
+                            <div class="text-[11px] text-charcoal-800/70 font-medium">গ্লোবাল লাক্সারি রেটিং</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Visual: The Grand Exhibition Display Card -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Outer Decorative Frame -->
+                        <div class="absolute -inset-3 rounded-2xl bg-gradient-to-tr from-gold-400/40 via-terracotta-600/20 to-gold-300/40 transform rotate-1 opacity-75 blur-sm"></div>
+                        
+                        <!-- Main Card -->
+                        <div class="relative bg-cream-50 rounded-2xl shadow-2xl overflow-hidden border border-gold-400/50">
+                            <!-- Image with zoom effect -->
+                            <div class="relative h-[420px] sm:h-[480px] overflow-hidden group">
+                                <img id="heroImage" src="https://images.unsplash.com/photo-1607344645866-009c320c5ab8?auto=format&fit=crop&w=1000&q=80" 
+                                     alt="Royal Handcrafted Nakshi Kantha" 
+                                     class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                                <div class="absolute inset-0 bg-gradient-to-t from-charcoal-950/80 via-charcoal-950/20 to-transparent"></div>
+                                
+                                <!-- Floating Pill Top Left -->
+                                <div class="absolute top-4 left-4 bg-charcoal-900/85 backdrop-blur-md border border-gold-400/60 text-gold-300 px-3 py-1.5 rounded-full text-xs flex items-center gap-1.5 shadow-lg">
+                                    <span class="w-2 h-2 rounded-full bg-gold-400"></span>
+                                    <span>মাস্টারপিস কালেকশন ২০২৬</span>
+                                </div>
+
+                                <!-- Floating Inspection Button -->
+                                <button onclick="openQuickView(1)" class="absolute top-4 right-4 bg-cream-50/90 hover:bg-cream-100 text-charcoal-900 p-2 rounded-full shadow-lg transition">
+                                    <i data-lucide="maximize-2" class="w-4 h-4"></i>
+                                </button>
+
+                                <!-- Bottom Badge on Image -->
+                                <div class="absolute bottom-4 left-4 right-4 text-cream-50">
+                                    <div class="text-xs uppercase tracking-widest text-gold-400 font-semibold mb-1">
+                                        রাজকীয় ময়ূরপঙ্খী সিল্ক নকশী কাঁথা
+                                    </div>
+                                    <div class="text-sm font-light text-cream-200">
+                                        মাস্টার কারিগর: মরিয়ম বেগম (যশোর) • ১৬০ ঘণ্টা বুনন শৈলী
+                                    </div>
+                                    <div class="mt-2 flex items-center justify-between">
+                                        <div class="text-xl font-bold font-royalSerif text-gold-300 price-display" data-bdt="24500" data-usd="210">
+                                            ৳ ২৪,৫০০
+                                        </div>
+                                        <button onclick="addToCart(1)" class="bg-gold-500 hover:bg-gold-400 text-charcoal-950 text-xs font-bold px-4 py-2 rounded-lg transition shadow flex items-center gap-1.5">
+                                            <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i>
+                                            <span>ব্যাগে যোগ করুন</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Artisan Stamp (Bottom Left Overhang) -->
+                        <div class="absolute -bottom-6 -left-6 bg-cream-50 border-2 border-gold-500 rounded-xl p-3.5 shadow-2xl flex items-center gap-3 hidden sm:flex max-w-[240px]">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&h=120&q=80" 
+                                 alt="Master Artisan" class="w-12 h-12 rounded-full object-cover border-2 border-terracotta-600">
+                            <div>
+                                <div class="text-xs font-bold text-charcoal-900 leading-tight">স্বত্বাধিকার নিশ্চিতকরণ</div>
+                                <div class="text-[10px] text-terracotta-700 font-semibold mt-0.5">১০০% ফেয়ার ট্রেড আর্ট</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: THE ANATOMY OF NAKSHI KANTHA (Craftsmanship & Stitches Explorer) -->
+    <section id="craftsmanship" class="py-16 bg-cream-200/60 border-b border-cream-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs uppercase tracking-widest text-terracotta-700 font-bold block mb-1">সুই-সুতোয় নিখুঁত জ্যামিতি</span>
+                <h2 class="text-2xl sm:text-4xl font-serifBengali font-bold text-charcoal-900">
+                    নকশী কাঁথার প্রাণ: ঐতিহাসিক ফোঁড় ও মোটিফের ব্যাকরণ
+                </h2>
+                <div class="w-16 h-0.5 bg-gold-500 mx-auto mt-3 mb-4"></div>
+                <p class="text-sm sm:text-base text-charcoal-800/80">
+                    আমাদের প্রতিটি কাঁথা কোনো সাধারণ সেলাই নয়; এটি প্রাচীন বাংলার নারী শিল্পীদের মনের গভীর আবেগ, প্রকৃতি বন্দনা এবং জাদুকরী সূচিকর্মের এক অমর জীবন্ত ক্যানভাস।
+                </p>
+            </div>
+
+            <!-- Stitches Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Stitch 1 -->
+                <div class="bg-cream-50 p-6 rounded-2xl border border-cream-300 hover:border-gold-400 hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-terracotta-700/10 text-terracotta-700 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="flower-2" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-serifBengali text-lg font-bold text-charcoal-900 mb-2">পদ্ম ও শতদল ফোঁড়</h3>
+                    <p class="text-xs text-charcoal-800/75 leading-relaxed mb-3">
+                        কাঁথার কেন্দ্রে চক্রাকারে ফুটন্ত পদ্ম ফুল সৌভাগ্য, পবিত্রতা ও অনন্ত শক্তির প্রতীক। একে সাজাতে ব্যবহার হয় বিশেষ ঘন বকুল সেলাই।
+                    </p>
+                    <span class="text-[11px] font-semibold text-gold-600 flex items-center gap-1">
+                        <span>বুনন সময়: ২৫+ ঘণ্টা</span>
+                    </span>
+                </div>
+
+                <!-- Stitch 2 -->
+                <div class="bg-cream-50 p-6 rounded-2xl border border-cream-300 hover:border-gold-400 hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-gold-400/20 text-gold-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="feather" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-serifBengali text-lg font-bold text-charcoal-900 mb-2">ময়ূরপঙ্খী ও কলকা পাড়</h3>
+                    <p class="text-xs text-charcoal-800/75 leading-relaxed mb-3">
+                        রাজকীয় ময়ূরের পুচ্ছ ও পারস্য ধারার বাঁকানো কলকা নকশা কাঁথার চারপাশের সীমানায় আভিজাত্যের নিখুঁত গণ্ডি টানে।
+                    </p>
+                    <span class="text-[11px] font-semibold text-gold-600 flex items-center gap-1">
+                        <span>বুনন সময়: ৪০+ ঘণ্টা</span>
+                    </span>
+                </div>
+
+                <!-- Stitch 3 -->
+                <div class="bg-cream-50 p-6 rounded-2xl border border-cream-300 hover:border-gold-400 hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-indigoHeritage/10 text-indigoHeritage flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="waves" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-serifBengali text-lg font-bold text-charcoal-900 mb-2">ঢেউ ও জীবনতরী নকশা</h3>
+                    <p class="text-xs text-charcoal-800/75 leading-relaxed mb-3">
+                        নদীমাতৃক বাংলার ঢেউ খেলানো স্রোত এবং পালতোলা নৌকা। সুতোর অতি সূক্ষ্ম ওঠানামায় কাপড়ের উপর আলোছায়ার মায়া তৈরি হয়।
+                    </p>
+                    <span class="text-[11px] font-semibold text-gold-600 flex items-center gap-1">
+                        <span>বুনন সময়: ৩০+ ঘণ্টা</span>
+                    </span>
+                </div>
+
+                <!-- Stitch 4 -->
+                <div class="bg-cream-50 p-6 rounded-2xl border border-cream-300 hover:border-gold-400 hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-600/10 text-emerald-700 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="shield-check" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-serifBengali text-lg font-bold text-charcoal-900 mb-2">তেরছা বোরফি ও জাল ফোঁড়</h3>
+                    <p class="text-xs text-charcoal-800/75 leading-relaxed mb-3">
+                        জ্যামিতিক ডায়মন্ড গ্রিডের জটিল জাল সেলাই। এটি কাপড়কে শতবর্ষী স্থায়িত্ব দেয় এবং কাঁথার বুনন কখনো আলগা হতে দেয় না।
+                    </p>
+                    <span class="text-[11px] font-semibold text-gold-600 flex items-center gap-1">
+                        <span>বুনন সময়: ৪৫+ ঘণ্টা</span>
+                    </span>
+                </div>
+
+            </div>
+
+            <!-- The 4-Step Master Artisan Process -->
+            <div class="mt-14 bg-charcoal-900 text-cream-100 rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+                <div class="absolute right-0 top-0 bottom-0 w-1/3 bg-gradient-to-l from-gold-500/10 to-transparent pointer-events-none"></div>
+                
+                <div class="relative z-10">
+                    <div class="text-xs uppercase tracking-widest text-gold-400 font-semibold mb-2">অভিজাত তৈরির প্রক্রিয়া</div>
+                    <h3 class="font-serifBengali text-xl sm:text-3xl font-bold mb-6">একটি নকশী কাঁথা সৃষ্টির ৪টি পবিত্র ধাপ</h3>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="border-l-2 border-gold-400 pl-4 space-y-1.5">
+                            <span class="text-gold-400 font-royalSerif text-xl font-bold">০১. নির্বাচন</span>
+                            <h4 class="text-sm font-bold text-cream-50">খাঁটি ফেব্রিক স্তরায়ন</h4>
+                            <p class="text-xs text-cream-300/75">১০০% ন্যাচারাল তুঁত সিল্ক বা খাদি সুতির ৩-৪ স্তর নিখুঁতভাবে বিছিয়ে সমতল করা হয়।</p>
+                        </div>
+
+                        <div class="border-l-2 border-gold-400 pl-4 space-y-1.5">
+                            <span class="text-gold-400 font-royalSerif text-xl font-bold">০২. আলপনা অঙ্কন</span>
+                            <h4 class="text-sm font-bold text-cream-50">প্রথাগত নকশা ট্রেসিং</h4>
+                            <p class="text-xs text-cream-300/75">প্রাকৃতিক নীল ও চক দিয়ে অভিজ্ঞ নকশাকার কাপড়ের ওপর নিজ হাতে মূল নকশা আঁকেন।</p>
+                        </div>
+
+                        <div class="border-l-2 border-gold-400 pl-4 space-y-1.5">
+                            <span class="text-gold-400 font-royalSerif text-xl font-bold">০৩. হস্তশিল্প বুনন</span>
+                            <h4 class="text-sm font-bold text-cream-50">মাসের পর মাস সুই-সুতো</h4>
+                            <p class="text-xs text-cream-300/75">একজন মাস্টার কারিগর গড়ে ১২০ থেকে ১৮০ ঘণ্টা ধরে এক একটি কাঁথায় প্রাণ সঞ্চার করেন।</p>
+                        </div>
+
+                        <div class="border-l-2 border-gold-400 pl-4 space-y-1.5">
+                            <span class="text-gold-400 font-royalSerif text-xl font-bold">০৪. গ্রেডিং ও সনদ</span>
+                            <h4 class="text-sm font-bold text-cream-50">হেরিটেজ কোয়ালিটি সিল</h4>
+                            <p class="text-xs text-cream-300/75">১০ দফা গুণগত মান যাচাই শেষে প্রদান করা হয় ইউনিক সিরিয়াল নম্বরযুক্ত সনদপত্র।</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION: THE SIGNATURE COLLECTIONS (Filterable E-Commerce Grid) -->
+    <section id="collections" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-6 border-b border-cream-300 gap-6">
+            <div>
+                <span class="text-xs uppercase tracking-widest text-terracotta-700 font-bold block mb-1">হেরিটেজ ক্যাটালগ</span>
+                <h2 class="text-2xl sm:text-4xl font-serifBengali font-bold text-charcoal-900">
+                    আমাদের সিগনেচার কালেকশন
+                </h2>
+                <p class="text-sm text-charcoal-800/80 mt-1 max-w-xl">
+                    প্রতিটি পিস স্বতন্ত্র ও একক সৃষ্টির মহিমায় ভাস্বর। একই নকশার দ্বিতীয় কোনো কাঁথা বিশ্বে তৈরি হয় না।
+                </p>
+            </div>
+
+            <!-- Filter Pills -->
+            <div class="flex flex-wrap items-center gap-2" id="filterPills">
+                <button onclick="filterProducts('all')" class="filter-btn active-filter px-4 py-2 rounded-full text-xs font-semibold bg-charcoal-900 text-cream-50 transition shadow">
+                    সকল কাঁথা (All)
+                </button>
+                <button onclick="filterProducts('silk')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-cream-50 text-charcoal-800 border border-cream-300 hover:border-gold-500 transition">
+                    তুঁত সিল্ক কাঁথা
+                </button>
+                <button onclick="filterProducts('cotton')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-cream-50 text-charcoal-800 border border-cream-300 hover:border-gold-500 transition">
+                    খাদি কটন থ্রো
+                </button>
+                <button onclick="filterProducts('wallart')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-cream-50 text-charcoal-800 border border-cream-300 hover:border-gold-500 transition">
+                    দেয়াল নকশী আর্ট
+                </button>
+                <button onclick="filterProducts('baby')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-cream-50 text-charcoal-800 border border-cream-300 hover:border-gold-500 transition">
+                    বেবি হেরিটেজ সেট
+                </button>
+            </div>
+        </div>
+
+        <!-- Product Cards Grid -->
+        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Product items dynamically populated by JS with rich details -->
+        </div>
+
+        <!-- Future Artisanal Categories Banner (Handmade expansion hint) -->
+        <div class="mt-16 bg-cream-200/50 rounded-2xl p-6 sm:p-8 border border-gold-400/30 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="space-y-1 text-center md:text-left">
+                <div class="inline-flex items-center gap-1.5 text-xs text-terracotta-700 font-bold uppercase tracking-wider">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                    <span>শীঘ্রই আসছে: সম্পূর্ণ হস্তশিল্প সম্ভার</span>
+                </div>
+                <h4 class="text-lg sm:text-xl font-serifBengali font-bold text-charcoal-900">
+                    কাঁথার পাশাপাশি যুক্ত হচ্ছে হ্যান্ডলুম লিনেন, টেরাকোটা ও রাজকীয় কাঁসা শিল্প
+                </h4>
+                <p class="text-xs text-charcoal-800/80">
+                    আমাদের ভবিষ্যৎ সংগ্রহেও প্রতিটি পণ্য হবে ১০০% পরিবেশবান্ধব ও গ্রামীণ কারিগরদের নিজ হাতে নির্মিত।
+                </p>
+            </div>
+            <button onclick="openNewsletterModal()" class="flex-shrink-0 bg-charcoal-900 hover:bg-gold-500 hover:text-charcoal-950 text-cream-50 px-6 py-3 rounded-xl text-xs font-bold transition shadow">
+                প্রাইভেট প্রিভিউয়ের জন্য যুক্ত হোন
+            </button>
+        </div>
+
+    </section>
+
+    <!-- SECTION: BESPOKE / CUSTOM KANTHA CONFIGURATOR (Luxury Interactive Feature) -->
+    <section id="bespoke" class="py-20 bg-charcoal-950 text-cream-100 relative overflow-hidden border-y border-gold-500/30">
+        <!-- Ambient Background Lights -->
+        <div class="absolute top-0 right-1/4 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-terracotta-700/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-xs uppercase tracking-widest text-gold-400 font-semibold block mb-2">
+                    L'Atelier Sur-Mesure • বেসপোক কাস্টমাইজেশন
+                </span>
+                <h2 class="text-2xl sm:text-4xl font-serifBengali font-bold text-cream-50">
+                    আপনার পারিবারিক ঐতিহ্য অনুযায়ী তৈরি করুন নিজস্ব নকশী কাঁথা
+                </h2>
+                <div class="w-20 h-0.5 bg-gold-400 mx-auto my-4"></div>
+                <p class="text-sm text-cream-200/80 leading-relaxed">
+                    বিয়ের উপহার, নতুন প্রজন্মের আগমন, অথবা ড্রয়িংরুমের বিশেষ আকর্ষণে নিজের পছন্দসই রঙ, কাপড় ও নকশায় আপনার নাম বা পারিবারিক শ্লোক খোদাই করে তৈরি করুন কালজয়ী কাঁথা।
+                </p>
+            </div>
+
+            <!-- Interactive Configurator Box -->
+            <div class="bg-charcoal-900/90 backdrop-blur-md rounded-3xl border border-gold-400/40 p-6 sm:p-10 shadow-2xl max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    
+                    <!-- Left: Configuration Controls -->
+                    <div class="lg:col-span-7 space-y-6">
+                        
+                        <!-- Step 1: Base Fabric Selection -->
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-gold-400 font-semibold mb-2">
+                                ধাপ ১: বেস ফেব্রিক নির্বাচন করুন
+                            </label>
+                            <div class="grid grid-cols-3 gap-3">
+                                <button type="button" onclick="selectFabric('silk', 12000)" class="fabric-opt active-opt p-3 rounded-xl border border-gold-400 bg-charcoal-800 text-left transition hover:border-gold-300">
+                                    <div class="text-xs font-bold text-cream-50">তুঁত সিল্ক</div>
+                                    <div class="text-[10px] text-gold-300 mt-1">Mulberry Silk</div>
+                                </button>
+                                <button type="button" onclick="selectFabric('tussar', 9500)" class="fabric-opt p-3 rounded-xl border border-charcoal-700 bg-charcoal-800/60 text-left transition hover:border-gold-400">
+                                    <div class="text-xs font-bold text-cream-50">তসর বন্য সিল্ক</div>
+                                    <div class="text-[10px] text-cream-400 mt-1">Wild Tussar</div>
+                                </button>
+                                <button type="button" onclick="selectFabric('khadi', 6000)" class="fabric-opt p-3 rounded-xl border border-charcoal-700 bg-charcoal-800/60 text-left transition hover:border-gold-400">
+                                    <div class="text-xs font-bold text-cream-50">খাদি অর্গানিক কটন</div>
+                                    <div class="text-[10px] text-cream-400 mt-1">Pure Khadi</div>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Dimensions / Size Selection -->
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-gold-400 font-semibold mb-2">
+                                ধাপ ২: কাঁথার সাইজ নির্ধারণ করুন
+                            </label>
+                            <div class="grid grid-cols-3 gap-3">
+                                <button type="button" onclick="selectSize('king', 8500)" class="size-opt active-opt p-3 rounded-xl border border-gold-400 bg-charcoal-800 text-left transition hover:border-gold-300">
+                                    <div class="text-xs font-bold text-cream-50">কিং মাস্টার কোয়িল্ট</div>
+                                    <div class="text-[10px] text-cream-400 mt-1">৯০" × ১০৮" ইঞ্চি</div>
+                                </button>
+                                <button type="button" onclick="selectSize('queen', 6000)" class="size-opt p-3 rounded-xl border border-charcoal-700 bg-charcoal-800/60 text-left transition hover:border-gold-400">
+                                    <div class="text-xs font-bold text-cream-50">কুইন বেডস্প্রেড</div>
+                                    <div class="text-[10px] text-cream-400 mt-1">৮৪" × ৯৬" ইঞ্চি</div>
+                                </button>
+                                <button type="button" onclick="selectSize('tapestry', 4000)" class="size-opt p-3 rounded-xl border border-charcoal-700 bg-charcoal-800/60 text-left transition hover:border-gold-400">
+                                    <div class="text-xs font-bold text-cream-50">ওয়াল আর্ট / থ্রো</div>
+                                    <div class="text-[10px] text-cream-400 mt-1">৬০" × ৬০" ইঞ্চি</div>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Dominant Motif Style -->
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-gold-400 font-semibold mb-2">
+                                ধাপ ৩: প্রধান মোটিফ শৈলী
+                            </label>
+                            <select id="bespokeMotif" onchange="updateBespokeCalculation()" class="w-full bg-charcoal-800 border border-gold-400/40 rounded-xl px-4 py-2.5 text-xs text-cream-50 focus:outline-none focus:border-gold-400">
+                                <option value="mayurpankhi">ময়ূরপঙ্খী রাজপ্রাসাদ মোটিফ (Royal Peacock & Vine)</option>
+                                <option value="lotus">পদ্মপুকুর ও শাপলা ফোঁড় (Sacred Lotus Bloom)</option>
+                                <option value="alpana">প্রাচীন নকশী আলপনা ও জ্যামিতিক বোরফি (Geometric Alpana)</option>
+                                <option value="rural">গ্রামবাংলা জীবনচিত্র ও পালতোলা তরী (Bengal Riverine Life)</option>
+                            </select>
+                        </div>
+
+                        <!-- Step 4: Monogram / Name Personalization -->
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-gold-400 font-semibold mb-2">
+                                ধাপ ৪: পার্সোনালাইজড নাম / শ্লোক এমব্রয়ডারি
+                            </label>
+                            <input type="text" id="bespokeMonogram" oninput="updateBespokeCalculation()" 
+                                placeholder="যেমন: 'তাহমিদ & সামিয়া — ২৫ ডিসেম্বর ২০২৬' বা পারিবারিক নাম" 
+                                class="w-full bg-charcoal-800 border border-gold-400/40 rounded-xl px-4 py-2.5 text-xs text-cream-50 focus:outline-none focus:border-gold-400">
+                            <span class="text-[11px] text-cream-400 block mt-1">সুই-সুতোয় কাঁথার এক কোণে নিখুঁতভাবে আপনার নাম ও শুভবার্তা সেলাই করে দেওয়া হবে।</span>
+                        </div>
+
+                    </div>
+
+                    <!-- Right: Live Cost & Bespoke Atelier Summary -->
+                    <div class="lg:col-span-5 bg-charcoal-950/80 rounded-2xl p-6 border border-gold-400/30 flex flex-col justify-between space-y-6">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between border-b border-charcoal-800 pb-3">
+                                <span class="text-xs uppercase tracking-wider text-gold-400 font-bold">অর্ডার সামারি</span>
+                                <span class="text-[11px] bg-terracotta-700/30 text-terracotta-400 border border-terracotta-700/50 px-2 py-0.5 rounded">হস্তশিল্প সময়: ৪-৬ সপ্তাহ</span>
+                            </div>
+
+                            <div class="space-y-2 text-xs">
+                                <div class="flex justify-between text-cream-300">
+                                    <span>নির্বাচিত ফেব্রিক:</span>
+                                    <span id="summaryFabric" class="font-bold text-cream-50">তুঁত সিল্ক (Mulberry)</span>
+                                </div>
+                                <div class="flex justify-between text-cream-300">
+                                    <span>আকার:</span>
+                                    <span id="summarySize" class="font-bold text-cream-50">কিং মাস্টার (৯০" × ১০৮")</span>
+                                </div>
+                                <div class="flex justify-between text-cream-300">
+                                    <span>নকশা শৈলী:</span>
+                                    <span id="summaryMotif" class="font-bold text-cream-50">ময়ূরপঙ্খী রাজপ্রাসাদ</span>
+                                </div>
+                                <div class="flex justify-between text-cream-300">
+                                    <span>কাস্টম নেম এমব্রয়ডারি:</span>
+                                    <span id="summaryMonogram" class="font-bold text-gold-400">উপলব্ধ</span>
+                                </div>
+                                <div class="flex justify-between text-cream-300">
+                                    <span>প্যাকেজিং:</span>
+                                    <span class="font-bold text-emerald-400">রয়্যাল পাইনউড বক্স + সার্টিফিকেট</span>
+                                </div>
+                            </div>
+
+                            <!-- Live Price Estimation -->
+                            <div class="pt-4 border-t border-charcoal-800">
+                                <div class="text-xs text-cream-400 mb-1">আনুমানিক বিনিয়োগ (Estimated Investment):</div>
+                                <div id="bespokeTotalPrice" class="text-3xl font-royalSerif font-bold text-gold-400">
+                                    ৳ ২০,৫০০
+                                </div>
+                                <div class="text-[10px] text-cream-400 mt-0.5">৫০% অগ্রিম পরিশোধে কাজ শুরু করা হয়</div>
+                            </div>
+                        </div>
+
+                        <!-- Submit Bespoke Request -->
+                        <div class="space-y-2 pt-2">
+                            <button onclick="submitBespokeRequest()" class="w-full bg-gold-500 hover:bg-gold-400 text-charcoal-950 font-bold py-3.5 px-4 rounded-xl text-xs uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 shadow-lg">
+                                <i data-lucide="send" class="w-4 h-4"></i>
+                                <span>কাস্টম অর্ডারের আবেদন জমা দিন</span>
+                            </button>
+                            <p class="text-[10px] text-center text-cream-400/80">
+                                আমাদের সিনিয়র আর্ট কিউরেটর ২৪ ঘণ্টার মধ্যে আপনার সাথে ডিজাইন ফাইনাল করতে যোগাযোগ করবেন।
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION: THE HEIRLOOM CERTIFICATE OF AUTHENTICITY -->
+    <section id="certificate-section" class="py-16 sm:py-24 bg-cream-50 border-b border-cream-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Details -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-400/15 border border-gold-400/40 text-gold-700 text-xs font-semibold">
+                        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+                        <span>১০০% প্রুভেন্যান্স ও স্বত্বাধিকার সুরক্ষা</span>
+                    </div>
+
+                    <h2 class="text-2xl sm:text-4xl font-serifBengali font-bold text-charcoal-900 leading-snug">
+                        প্রতিটি কাঁথার সাথে প্রদান করা হয় ঐতিহাসিক 
+                        <span class="text-terracotta-700">অথেন্টিসিটি সার্টিফিকেট</span>
+                    </h2>
+
+                    <p class="text-sm sm:text-base text-charcoal-800/80 leading-relaxed">
+                        একটি আন্তর্জাতিক মানের আর্ট হাউসের মতো আমাদের প্রতিটি কাঁথায় বরাদ্দ থাকে একটি ইউনিক হোলোগ্রাফিক সিরিয়াল কোড, তৈরি কারিগরের স্বাক্ষর, ব্যবহৃত রেশমের গ্রেড এবং মোট ব্যয়িত শ্রমঘণ্টার বিস্তারিত বিবরণ।
+                    </p>
+
+                    <div class="space-y-3 pt-2">
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-gold-400/20 text-gold-700 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i data-lucide="award" class="w-3.5 h-3.5"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-charcoal-900">স্বাক্ষরিত শিল্পীর পরিচয় ও গ্রাম</h4>
+                                <p class="text-[11px] text-charcoal-800/70">কোন জেলার কোন প্রতিভাময়ী নারী শিল্পী আপনার কাঁথাটি তৈরি করেছেন তার সম্পূর্ণ বৃত্তান্ত লিপিবদ্ধ থাকে।</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-gold-400/20 text-gold-700 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i data-lucide="history" class="w-3.5 h-3.5"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-charcoal-900">বংশপরম্পরায় ভ্যালু বৃদ্ধি</h4>
+                                <p class="text-[11px] text-charcoal-800/70">আর্ট সংগ্রাহকদের জন্য এটি একটি অমূল্য প্রামাণ্য দলিল, যা ভবিষ্যতে এই ঐতিহ্যমণ্ডিত কাঁথার ঐতিহাসিক মূল্য বাড়িয়ে দেয়।</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-gold-400/20 text-gold-700 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i data-lucide="sparkle" class="w-3.5 h-3.5"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-charcoal-900">রয়্যাল হ্যান্ডমেড উডেন বক্স প্রেজেন্টেশন</h4>
+                                <p class="text-[11px] text-charcoal-800/70">মসলিন কাপড়ে মোড়ানো অবস্থায় বিশেষ রাজকীয় বার্নিশ করা কাঠের বাক্সে কাঁথা ও সার্টিফিকেট হস্তান্তর করা হয়।</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <button onclick="previewCertificateDemo()" class="bg-charcoal-900 hover:bg-terracotta-700 text-cream-50 text-xs font-bold px-6 py-3 rounded-xl transition shadow flex items-center gap-2">
+                            <i data-lucide="file-text" class="w-4 h-4"></i>
+                            <span>নমুনা সার্টিফিকেট প্রিভিউ দেখুন</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Visual: The Certificate Mockup -->
+                <div class="lg:col-span-6 flex justify-center">
+                    <div id="certificateCard" class="bg-[#FFFDF9] border-4 border-[#C8B273] rounded-2xl p-6 sm:p-8 shadow-2xl max-w-md w-full relative overflow-hidden stitch-border">
+                        <!-- Watermark Emblem in Background -->
+                        <div class="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
+                            <svg class="w-80 h-80" viewBox="0 0 40 40" fill="currentColor">
+                                <circle cx="20" cy="20" r="18"/>
+                            </svg>
+                        </div>
+
+                        <!-- Top Certificate Header -->
+                        <div class="text-center border-b border-[#D4AF37]/40 pb-4 relative z-10">
+                            <div class="font-cinzel text-[10px] tracking-[0.25em] text-gold-600 font-bold uppercase">
+                                Certificate of Provenance & Authenticity
+                            </div>
+                            <div class="font-serifBengali text-2xl font-bold text-charcoal-900 mt-1" id="certBrandTitle">
+                                সৌখিন কাঁথা হেরিটেজ সনদ
+                            </div>
+                            <div class="text-[10px] text-charcoal-800/60 font-mono mt-0.5">
+                                REGISTRATION ID: <span class="text-terracotta-700 font-bold">#SK-2026-HER-0842</span>
+                            </div>
+                        </div>
+
+                        <!-- Certificate Body Details -->
+                        <div class="py-5 space-y-3 text-xs relative z-10">
+                            <div class="flex justify-between border-b border-cream-200 pb-1.5">
+                                <span class="text-charcoal-800/70">মাস্টারপিস টাইটেল:</span>
+                                <span class="font-bold text-charcoal-900">রাজকীয় ময়ূরপঙ্খী সিল্ক নকশী কাঁথা</span>
+                            </div>
+                            <div class="flex justify-between border-b border-cream-200 pb-1.5">
+                                <span class="text-charcoal-800/70">প্রধান কারিগর:</span>
+                                <span class="font-bold text-terracotta-700">মোসাম্মৎ মরিয়ম বেগম</span>
+                            </div>
+                            <div class="flex justify-between border-b border-cream-200 pb-1.5">
+                                <span class="text-charcoal-800/70">অঞ্চল / ভিলেজ হাব:</span>
+                                <span class="font-bold text-charcoal-900">নওয়াপাড়া, যশোর জেলা</span>
+                            </div>
+                            <div class="flex justify-between border-b border-cream-200 pb-1.5">
+                                <span class="text-charcoal-800/70">ব্যয়িত হস্তশিল্প সময়:</span>
+                                <span class="font-bold text-charcoal-900">১৬০ নিখুঁত শ্রমঘণ্টা</span>
+                            </div>
+                            <div class="flex justify-between border-b border-cream-200 pb-1.5">
+                                <span class="text-charcoal-800/70">সুতা ও কাপড় মান:</span>
+                                <span class="font-bold text-charcoal-900">১০০% প্রাকৃতিক তসর ও মালবেরি রেশম</span>
+                            </div>
+                        </div>
+
+                        <!-- Signatures & Golden Holographic Seal -->
+                        <div class="pt-4 flex items-center justify-between relative z-10 border-t border-[#D4AF37]/40">
+                            <div class="text-center">
+                                <div class="font-royalSerif italic text-charcoal-800 text-sm">M. Begum</div>
+                                <div class="text-[9px] text-charcoal-800/60 uppercase border-t border-charcoal-400/30 pt-0.5">মাস্টার আর্টিজান</div>
+                            </div>
+
+                            <!-- Golden Foil Seal -->
+                            <div class="w-14 h-14 rounded-full bg-gradient-to-tr from-gold-600 via-gold-400 to-gold-300 p-0.5 shadow-lg flex items-center justify-center">
+                                <div class="w-full h-full rounded-full border border-charcoal-900/40 flex flex-col items-center justify-center text-charcoal-950 text-center font-cinzel text-[7px] font-extrabold leading-tight">
+                                    <span>SEAL OF</span>
+                                    <span>AUTHENTIC</span>
+                                    <span>HERITAGE</span>
+                                </div>
+                            </div>
+
+                            <div class="text-center">
+                                <div class="font-royalSerif italic text-charcoal-800 text-sm">Shoukhin Curator</div>
+                                <div class="text-[9px] text-charcoal-800/60 uppercase border-t border-charcoal-400/30 pt-0.5">চিফ কিউরেটর</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: MEET THE ARTISANS & FAIR TRADE IMPACT -->
+    <section id="artisan-story" class="py-16 sm:py-24 bg-cream-100 border-b border-cream-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-xs uppercase tracking-widest text-terracotta-700 font-bold block mb-1">নারী ক্ষমতায়ন ও আত্মমর্যাদা</span>
+                <h2 class="text-2xl sm:text-4xl font-serifBengali font-bold text-charcoal-900">
+                    আমাদের কারিগর: পল্লী বাংলার অপ্রকাশিত মহীয়সী শিল্পীরা
+                </h2>
+                <div class="w-16 h-0.5 bg-gold-500 mx-auto my-4"></div>
+                <p class="text-sm sm:text-base text-charcoal-800/80">
+                    আমরা বিশ্বাস করি আভিজাত্যের আসল সৌন্দর্য স্বচ্ছতায়। আপনার প্রতিটি ক্রয়ের একটি নির্দিষ্ট অংশ সরাসরি পৌঁছায় আমাদের গ্রামীণ নারী কারিগরদের স্বাস্থ্যসেবা ও সন্তানদের শিক্ষার তহবিলে।
+                </p>
+            </div>
+
+            <!-- Artisan Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Artisan 1 -->
+                <div class="bg-cream-50 rounded-2xl overflow-hidden border border-cream-300 shadow hover:shadow-xl transition-all duration-300">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80" 
+                             alt="Artisan Morium Begum" class="w-full h-full object-cover">
+                        <div class="absolute bottom-3 left-3 bg-charcoal-900/80 backdrop-blur-sm text-gold-300 px-3 py-1 rounded-full text-xs font-semibold">
+                            অভিজ্ঞতা: ২২ বছর • যশোর
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serifBengali text-xl font-bold text-charcoal-900 mb-1">মোসাম্মৎ মরিয়ম বেগম</h3>
+                        <p class="text-xs text-gold-600 font-semibold mb-3">সিনিয়র মাস্টার আর্টিজান (সিল্ক স্পেশালিস্ট)</p>
+                        <p class="text-xs text-charcoal-800/75 leading-relaxed italic">
+                            “আমার মা-নানির কাছ থেকে শেখা এই সুইয়ের ফোঁড় এখন দেশের সীমানা ছাড়িয়ে পৃথিবীর ঘরে ঘরে সমাদৃত হচ্ছে। যখন কাঁথাটির মাঝে নিজের মনের মাধুরী ঢেলে দিই, তখন ভুলে যাই সারা দিনের ক্লান্তি।”
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Artisan 2 -->
+                <div class="bg-cream-50 rounded-2xl overflow-hidden border border-cream-300 shadow hover:shadow-xl transition-all duration-300">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" 
+                             alt="Artisan Salma Akhtar" class="w-full h-full object-cover">
+                        <div class="absolute bottom-3 left-3 bg-charcoal-900/80 backdrop-blur-sm text-gold-300 px-3 py-1 rounded-full text-xs font-semibold">
+                            অভিজ্ঞতা: ১৫ বছর • জামালপুর
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serifBengali text-xl font-bold text-charcoal-900 mb-1">সালমা আক্তার</h3>
+                        <p class="text-xs text-gold-600 font-semibold mb-3">চিফ আলপনা ও ট্রেসিং আর্টিস্ট</p>
+                        <p class="text-xs text-charcoal-800/75 leading-relaxed italic">
+                            “কাঁথায় যে পদ্ম বা ময়ূর ফুটে ওঠে, তার ড্রয়িং করাটা এক ধরনের ধ্যান। আমাদের ন্যায্য পারিশ্রমিক ও সম্মান দেওয়ায় আজ আমার দুই মেয়ে কলেজে পড়ছে। এটাই আমার জীবনের সবচেয়ে বড় গর্ব।”
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Artisan 3 -->
+                <div class="bg-cream-50 rounded-2xl overflow-hidden border border-cream-300 shadow hover:shadow-xl transition-all duration-300">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=600&q=80" 
+                             alt="Artisan Rabeya Khatun" class="w-full h-full object-cover">
+                        <div class="absolute bottom-3 left-3 bg-charcoal-900/80 backdrop-blur-sm text-gold-300 px-3 py-1 rounded-full text-xs font-semibold">
+                            অভিজ্ঞতা: ১৮ বছর • রাজশাহী
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serifBengali text-xl font-bold text-charcoal-900 mb-1">রাবেয়া খাতুন</h3>
+                        <p class="text-xs text-gold-600 font-semibold mb-3">মাইক্রো-স্টিচ ও ফিনিশিং এক্সপার্ট</p>
+                        <p class="text-xs text-charcoal-800/75 leading-relaxed italic">
+                            “একটি কাঁথায় প্রায় লাখখানেক ফোঁড় দিতে হয়। প্রতিটা ফোঁড়ের টান যদি সমান না হয় কাঁথার মান নষ্ট হয়ে যায়। আমরা সর্বোচ্চ যত্নে কাজ করি যাতে কাঁথাটি ৫০ বছর পরেও নতুন দেখায়।”
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: GLOBAL REVIEWS & HIGH-SOCIETY TESTIMONIALS -->
+    <section class="py-16 sm:py-24 bg-cream-200/50 border-b border-cream-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs uppercase tracking-widest text-gold-600 font-bold block mb-1">বিশ্বস্ত গ্রাহক প্রতিক্রিয়া</span>
+                <h2 class="text-2xl sm:text-4xl font-serifBengali font-bold text-charcoal-900">
+                    আমাদের গ্রাহকদের ভালোবাসার প্রকাশ
+                </h2>
+                <div class="w-16 h-0.5 bg-gold-500 mx-auto my-3"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Review 1 -->
+                <div class="bg-cream-50 p-6 rounded-2xl border border-cream-300 shadow-sm relative">
+                    <div class="flex items-center gap-1 text-gold-500 mb-3">
+                        <i data-lucide="star" class="w-4 h-4 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-gold-500"></i>
+                    </div>
+                    <p class="text-xs text-charcoal-800/80 leading-relaxed mb-4">
+                        “লন্ডনের অ্যাপার্টমেন্টে এই কাঁথাটি যখন খাটের ওপর বিছিয়েছি, যে-ই এসেছে স্তব্ধ হয়ে প্রশংসা করেছে। এর সেলাইয়ের সূক্ষ্মতা দেখলে বিশ্বাসই হতে চায় না এটা মানুষের হাতে করা! কাঠের প্যাকেজিংটিও ছিল দারুণ রাজকীয়।”
+                    </p>
+                    <div class="flex items-center gap-3 border-t border-cream-200 pt-3">
+                        <div class="w-9 h-9 rounded-full bg-terracotta-700 text-cream-50 font-bold text-xs flex items-center justify-center">
+                            NM
+                        </div>
+                        <div>
+                            <div class="text-xs font-bold text-charcoal-900">নুসরাত জাহান চৌধুরী</div>
+                            <div class="text-[10px] text-charcoal-800/60">ক্যানারি ওয়ার্ফ, লন্ডন • ভেরিফাইড বায়ার</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-cream-50 p-6 rounded-2xl border border-cream-300 shadow-sm relative">
+                    <div class="flex items-center gap-1 text-gold-500 mb-3">
+                        <i data-lucide="star" class="w-4 h-4 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-gold-500"></i>
+                    </div>
+                    <p class="text-xs text-charcoal-800/80 leading-relaxed mb-4">
+                        “আমার বোনের বিয়ের জন্য আমরা একটা কাস্টমাইজড ময়ূরপঙ্খী সিল্ক কাঁথা অর্ডার করেছিলাম। ওদের নাম এবং বিয়ের তারিখ সুতো দিয়ে এতো নিখুঁতভাবে লেখা হয়েছিল যে সবাই অবাক হয়ে গেছে। এটা আজীবন একটা সম্পদ হিসেবে থাকবে।”
+                    </p>
+                    <div class="flex items-center gap-3 border-t border-cream-200 pt-3">
+                        <div class="w-9 h-9 rounded-full bg-gold-600 text-cream-50 font-bold text-xs flex items-center justify-center">
+                            TR
+                        </div>
+                        <div>
+                            <div class="text-xs font-bold text-charcoal-900">ব্যারিস্টার তানভীর রহমান</div>
+                            <div class="text-[10px] text-charcoal-800/60">গুলশান-২, ঢাকা • বেসপোক ক্লায়েন্ট</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-cream-50 p-6 rounded-2xl border border-cream-300 shadow-sm relative">
+                    <div class="flex items-center gap-1 text-gold-500 mb-3">
+                        <i data-lucide="star" class="w-4 h-4 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-gold-500"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-gold-500"></i>
+                    </div>
+                    <p class="text-xs text-charcoal-800/80 leading-relaxed mb-4">
+                        “ফ্রেম করা নকশী কাঁথা ওয়াল আর্টটি আমার নিউইয়র্কের ড্রয়িংরুমে লাগিয়েছি। অথেন্টিসিটি সার্টিফিকেটসহ আসায় অতিথিদের এর পেছনের ঐতিহ্য সহজে বোঝানো যায়। খাঁটি রেশমের প্রাকৃতিক উজ্জ্বলতা সত্যিই অনন্য।”
+                    </p>
+                    <div class="flex items-center gap-3 border-t border-cream-200 pt-3">
+                        <div class="w-9 h-9 rounded-full bg-charcoal-800 text-cream-50 font-bold text-xs flex items-center justify-center">
+                            FA
+                        </div>
+                        <div>
+                            <div class="text-xs font-bold text-charcoal-900">ফারহানা আহমেদ</div>
+                            <div class="text-[10px] text-charcoal-800/60">ম্যানহাটন, নিউইয়র্ক • আর্ট সংগ্রাহক</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: FAQ & CARE GUIDE -->
+    <section class="py-16 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+            <span class="text-xs uppercase tracking-widest text-terracotta-700 font-bold block mb-1">আপনার জিজ্ঞাসা ও সঠিক যত্ন</span>
+            <h2 class="text-2xl sm:text-3xl font-serifBengali font-bold text-charcoal-900">
+                সাধারণ প্রশ্নোত্তর ও কাঁথা সংরক্ষণ বিধি
+            </h2>
+        </div>
+
+        <div class="space-y-3">
+            <!-- FAQ 1 -->
+            <div class="bg-cream-50 border border-cream-300 rounded-xl overflow-hidden">
+                <button onclick="toggleFaq('faq1')" class="w-full text-left p-4 sm:p-5 flex justify-between items-center text-sm font-bold text-charcoal-900 hover:text-terracotta-700 transition">
+                    <span>১. খাঁটি নকশী কাঁথা কীভাবে পরিষ্কার ও দীর্ঘদিন সংরক্ষণ করতে হয়?</span>
+                    <i data-lucide="chevron-down" id="faq1-icon" class="w-4 h-4 transform transition-transform"></i>
+                </button>
+                <div id="faq1" class="hidden p-5 pt-0 text-xs text-charcoal-800/80 leading-relaxed border-t border-cream-200">
+                    সিল্ক নকশী কাঁথার জন্য সর্বদা ড্রাই ক্লিনিং (Dry Clean) পরামর্শ দেওয়া হয়। কটন খাদি কাঁথা মৃদু ঠাণ্ডা পানিতে হালকা ডিটারজেন্ট দিয়ে ড্রাই শ্যাম্পু ওয়াশ করা যায়। দীর্ঘস্থায়ী উজ্জ্বলতার জন্য ব্যবহারের পর রোদে শুকাতে হলে হালকা ছায়াযুক্ত স্থানে শুকানো ভালো। সংরক্ষণের সময় নিমপাতা বা ন্যাপথলিনযুক্ত সুতি মসলিন কাপড়ে মুড়িয়ে সংরক্ষণ করলে বংশপরম্পরায় ভালো থাকে।
+                </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="bg-cream-50 border border-cream-300 rounded-xl overflow-hidden">
+                <button onclick="toggleFaq('faq2')" class="w-full text-left p-4 sm:p-5 flex justify-between items-center text-sm font-bold text-charcoal-900 hover:text-terracotta-700 transition">
+                    <span>২. বিদেশে ডেলিভারি ও পেমেন্ট ব্যবস্থা কেমন?</span>
+                    <i data-lucide="chevron-down" id="faq2-icon" class="w-4 h-4 transform transition-transform"></i>
+                </button>
+                <div id="faq2" class="hidden p-5 pt-0 text-xs text-charcoal-800/80 leading-relaxed border-t border-cream-200">
+                    আমরা DHL ও FedEx এক্সপ্রেসের মাধ্যমে যুক্তরাষ্ট্র, যুক্তরাজ্য, কানাডা, অস্ট্রেলিয়া ও মধ্যপ্রাচ্যসহ বিশ্বব্যাপী ৪-৭ কার্যদিবসে নিরাপদ ডেলিভারি প্রদান করি। আন্তর্জাতিক অর্ডারে ভিসা, মাস্টারকার্ড, বা ব্যাংক ওয়্যারের মাধ্যমে পেমেন্ট করা যায়।
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="bg-cream-50 border border-cream-300 rounded-xl overflow-hidden">
+                <button onclick="toggleFaq('faq3')" class="w-full text-left p-4 sm:p-5 flex justify-between items-center text-sm font-bold text-charcoal-900 hover:text-terracotta-700 transition">
+                    <span>৩. কাস্টম অর্ডার (Bespoke) তৈরি হতে কতদিন সময় লাগে?</span>
+                    <i data-lucide="chevron-down" id="faq3-icon" class="w-4 h-4 transform transition-transform"></i>
+                </button>
+                <div id="faq3" class="hidden p-5 pt-0 text-xs text-charcoal-800/80 leading-relaxed border-t border-cream-200">
+                    যেহেতু প্রতিটি কাস্টম কাঁথা সম্পূর্ণ নিজ হাতে সেলাই করা হয়, তাই সাইজ ও নকশার জটিলতার ওপর ভিত্তি করে সাধারণত ৪ থেকে ৬ সপ্তাহ সময় লাগে। কাজের অগ্রগতি প্রতি সপ্তাহে আপনাকে ছবি ও ভিডিওর মাধ্যমে আপডেট দেওয়া হয়।
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: NEWSLETTER & PRIVATE VIP SALON -->
+    <section class="py-16 bg-charcoal-950 text-cream-100 border-t border-gold-500/20">
+        <div class="max-w-4xl mx-auto px-4 text-center space-y-4">
+            <span class="text-xs uppercase tracking-widest text-gold-400 font-semibold">প্রাইভেট সালোন আমন্ত্রণ</span>
+            <h3 class="text-2xl sm:text-3xl font-serifBengali font-bold">
+                আমাদের সীমিত সংস্করণ লুকবুক ও ব্যক্তিগত প্রিভিউ পান
+            </h3>
+            <p class="text-xs sm:text-sm text-cream-300/80 max-w-xl mx-auto">
+                নতুন কোনো মাস্টারপিস কাঁথা সম্পন্ন হলে সবার প্রথমে আপনাকে জানানো হবে। সাবস্ক্রাইব করলেই প্রথম অর্ডারে পাবেন বিশেষ লাক্সারি গিফট ভাউচার।
+            </p>
+            <form onsubmit="handleNewsletterSubmit(event)" class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto">
+                <input type="email" id="newsletterEmail" required placeholder="আপনার ইমেইল অ্যাড্রেস লিখুন..." 
+                    class="w-full bg-charcoal-900 border border-gold-400/50 rounded-xl px-4 py-3 text-xs text-cream-50 focus:outline-none focus:border-gold-300">
+                <button type="submit" class="w-full sm:w-auto bg-gold-500 hover:bg-gold-400 text-charcoal-950 font-bold px-6 py-3 rounded-xl text-xs uppercase tracking-wider transition whitespace-nowrap">
+                    যুক্ত হোন
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER: LUXURY EDITORIAL FINALE -->
+    <footer class="bg-charcoal-900 text-cream-200 pt-16 pb-12 border-t border-cream-300/20 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-charcoal-800">
+                
+                <!-- Brand Bio -->
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="flex items-center gap-2">
+                        <svg class="w-6 h-6 text-gold-500" viewBox="0 0 40 40" fill="none">
+                            <circle cx="20" cy="20" r="19" stroke="#D4AF37" stroke-width="1.5" stroke-dasharray="3 3"/>
+                            <path d="M20 7L23 16L32 20L23 24L20 33L17 24L8 20L17 16L20 7Z" fill="#9C3D32"/>
+                        </svg>
+                        <span id="footerBrandTitle" class="font-serifBengali text-2xl font-bold text-cream-50">সৌখিন কাঁথা</span>
+                    </div>
+                    <p class="text-xs text-cream-300/70 leading-relaxed max-w-sm">
+                        বাংলার ঐতিহ্যবাহী নকশী কাঁথা ও হস্তশিল্পের রাজকীয় রূপকার। গ্রামীণ নারী কারিগরদের জীবনমান উন্নয়ন ও শতবর্ষী শিল্পকে বিশ্বমঞ্চে তুলে ধরতে আমাদের এই অভিজাত যাত্রা।
+                    </p>
+                    <div class="text-[11px] text-gold-400 font-mono">
+                        Dhaka Atelier • London Representative • New York Salon
+                    </div>
+                </div>
+
+                <!-- Column 1: Collections -->
+                <div class="space-y-3">
+                    <h5 class="text-xs uppercase tracking-widest text-gold-400 font-bold">কালেকশন</h5>
+                    <ul class="space-y-2 text-cream-300/80">
+                        <li><a href="#collections" class="hover:text-gold-300 transition">তুঁত সিল্ক কাঁথা</a></li>
+                        <li><a href="#collections" class="hover:text-gold-300 transition">খাদি কটন থ্রো</a></li>
+                        <li><a href="#collections" class="hover:text-gold-300 transition">ফ্রেমড ওয়াল আর্ট</a></li>
+                        <li><a href="#collections" class="hover:text-gold-300 transition">হেরিটেজ বেবি কালেকশন</a></li>
+                        <li><a href="#bespoke" class="hover:text-gold-300 transition">বেসপোক কাস্টম অর্ডার</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 2: The House -->
+                <div class="space-y-3">
+                    <h5 class="text-xs uppercase tracking-widest text-gold-400 font-bold">আমাদের গৃহ</h5>
+                    <ul class="space-y-2 text-cream-300/80">
+                        <li><a href="#craftsmanship" class="hover:text-gold-300 transition">বুনন ও ফোঁড় শৈলী</a></li>
+                        <li><a href="#artisan-story" class="hover:text-gold-300 transition">কারিগর সম্প্রদায়</a></li>
+                        <li><a href="#certificate-section" class="hover:text-gold-300 transition">অথেন্টিসিটি সনদ</a></li>
+                        <li><a href="#" onclick="showCareModal()" class="hover:text-gold-300 transition">সংরক্ষণ গাইডলাইন</a></li>
+                        <li><a href="#" class="hover:text-gold-300 transition">সাসটেইনেবিলিটি চার্টার</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Concierge & Contact -->
+                <div class="space-y-3">
+                    <h5 class="text-xs uppercase tracking-widest text-gold-400 font-bold">কনসিয়ার্জ সাপোর্ট</h5>
+                    <ul class="space-y-2 text-cream-300/80">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="phone" class="w-3.5 h-3.5 text-gold-400"></i>
+                            <span>+880 1700-000000</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="mail" class="w-3.5 h-3.5 text-gold-400"></i>
+                            <span>concierge@shoukhin.com</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-gold-400 flex-shrink-0 mt-0.5"></i>
+                            <span>রোড ১২, ব্লক ডি, বনানী, ঢাকা-১২১৩</span>
+                        </li>
+                    </ul>
+                    <div class="pt-2 flex items-center gap-3 text-cream-400">
+                        <a href="#" class="hover:text-gold-400 transition"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                        <a href="#" class="hover:text-gold-400 transition"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                        <a href="#" class="hover:text-gold-400 transition"><i data-lucide="globe" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright & Badges -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-cream-400/60">
+                <div id="copyrightText">
+                    © ২০২৬ সৌখিন কাঁথা (SHOUKHIN ATELIER). সর্বস্বত্ব সংরক্ষিত।
+                </div>
+                <div class="flex items-center gap-4">
+                    <span>গ্লোবাল এক্সপ্রেস ডেলিভারি (DHL / FedEx)</span>
+                    <span>•</span>
+                    <span>১০০% সিকিউর পেমেন্ট গেটওয়ে</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CART SLIDE-OVER DRAWER -->
+    <div id="cartDrawerOverlay" class="fixed inset-0 bg-charcoal-950/70 backdrop-blur-sm z-50 hidden transition-opacity" onclick="toggleCartDrawer()"></div>
+    <div id="cartDrawer" class="fixed top-0 right-0 bottom-0 w-full max-w-md bg-cream-50 z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col border-l border-gold-400/40">
+        <!-- Cart Header -->
+        <div class="p-5 border-b border-cream-300 flex items-center justify-between bg-cream-100">
+            <div class="flex items-center gap-2">
+                <i data-lucide="shopping-bag" class="w-5 h-5 text-terracotta-700"></i>
+                <h3 class="font-serifBengali text-lg font-bold text-charcoal-900">আপনার শপিং ব্যাগ</h3>
+                <span id="cartDrawerBadge" class="text-xs bg-gold-400/30 text-gold-700 font-bold px-2 py-0.5 rounded-full">১টি আইটেম</span>
+            </div>
+            <button onclick="toggleCartDrawer()" class="p-1.5 text-charcoal-800 hover:text-terracotta-600 transition">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+        </div>
+
+        <!-- Cart Items List -->
+        <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-5 space-y-4">
+            <!-- Dynamically populated cart items -->
+        </div>
+
+        <!-- Cart Footer -->
+        <div class="p-5 border-t border-cream-300 bg-cream-100 space-y-4">
+            <div class="space-y-1.5 text-xs">
+                <div class="flex justify-between text-charcoal-800/80">
+                    <span>সাবটোটাল:</span>
+                    <span id="cartSubtotal" class="font-bold text-charcoal-900">৳ ২৪,৫০০</span>
+                </div>
+                <div class="flex justify-between text-charcoal-800/80">
+                    <span>প্যাকেজিং ও ডেলিভারি:</span>
+                    <span class="text-emerald-700 font-bold">ফ্রি (রয়্যাল বক্স সহ)</span>
+                </div>
+                <div class="flex justify-between text-charcoal-800/80">
+                    <span>অথেন্টিসিটি সার্টিফিকেট:</span>
+                    <span class="text-gold-700 font-bold">অন্তর্ভুক্ত (#0842)</span>
+                </div>
+                <div class="flex justify-between text-base font-bold text-charcoal-900 pt-2 border-t border-cream-200">
+                    <span>সর্বমোট প্রদেয়:</span>
+                    <span id="cartTotal" class="text-terracotta-700 font-royalSerif text-xl">৳ ২৪,৫০০</span>
+                </div>
+            </div>
+
+            <button onclick="openCheckoutModal()" class="w-full bg-terracotta-700 hover:bg-terracotta-800 text-cream-50 font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider transition shadow-lg flex items-center justify-center gap-2">
+                <i data-lucide="lock" class="w-4 h-4"></i>
+                <span>নিরাপদ চেকআউট সম্পন্ন করুন</span>
+            </button>
+            <p class="text-[10px] text-center text-charcoal-800/60">
+                ক্যাশ অন ডেলিভারি, বিকাশ ও আন্তর্জাতিক ক্রেডিট কার্ড গ্রহণযোগ্য
+            </p>
+        </div>
+    </div>
+
+    <!-- QUICK VIEW MODAL (Product Deep Inspection) -->
+    <div id="quickViewModal" class="fixed inset-0 bg-charcoal-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-cream-50 max-w-3xl w-full rounded-2xl shadow-2xl border border-gold-400/40 overflow-hidden relative max-h-[90vh] flex flex-col md:flex-row">
+            <button onclick="closeQuickView()" class="absolute top-4 right-4 z-10 bg-cream-100/80 hover:bg-cream-200 text-charcoal-900 p-2 rounded-full">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <!-- Left Image -->
+            <div class="md:w-1/2 h-64 md:h-auto relative overflow-hidden bg-charcoal-950">
+                <img id="qvImage" src="" alt="Kantha preview" class="w-full h-full object-cover">
+                <div id="qvArtisanBadge" class="absolute bottom-3 left-3 bg-charcoal-900/85 backdrop-blur-sm text-gold-300 px-3 py-1 rounded-full text-xs">
+                    কারিগর: মোসাম্মৎ মরিয়ম
+                </div>
+            </div>
+            <!-- Right Details -->
+            <div class="md:w-1/2 p-6 md:p-8 flex flex-col justify-between overflow-y-auto space-y-4">
+                <div>
+                    <span id="qvCategory" class="text-[10px] uppercase tracking-wider text-terracotta-700 font-bold block mb-1">প্রিমিয়াম তুঁত সিল্ক</span>
+                    <h3 id="qvTitle" class="font-serifBengali text-xl sm:text-2xl font-bold text-charcoal-900 mb-2">রাজকীয় ময়ূরপঙ্খী সিল্ক নকশী কাঁথা</h3>
+                    <div id="qvPrice" class="text-2xl font-royalSerif font-bold text-terracotta-700 mb-3">৳ ২৪,৫০০</div>
+                    <p id="qvDescription" class="text-xs text-charcoal-800/80 leading-relaxed mb-4">
+                        খাঁটি প্রাকৃতিক রেশমে তৈরি এই কাঁথাটিতে ময়ূরপঙ্খী নৌকা এবং পুষ্পমঞ্জরীর নিখুঁত সমাবেশ ঘটেছে। প্রতিটি ফোঁড় সম্পূর্ণ অপরিবর্তনশীল টেকসই সুতোয় বোনা।
+                    </p>
+                    
+                    <div class="space-y-2 border-t border-cream-200 pt-3 text-xs">
+                        <div class="flex justify-between">
+                            <span class="text-charcoal-800/70">আকার (Dimensions):</span>
+                            <span id="qvSize" class="font-bold text-charcoal-900">৯০" × ১০৮" (King Master)</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-charcoal-800/70">হাতে বুনন সময়:</span>
+                            <span id="qvHours" class="font-bold text-charcoal-900">১৬০ ঘণ্টা</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-charcoal-800/70">প্যাকেজিং:</span>
+                            <span class="font-bold text-emerald-700">রয়্যাল পাইনউড বক্স ও সনদপত্র</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-2 pt-4">
+                    <button id="qvAddToCartBtn" onclick="addCurrentQvToCart()" class="w-full bg-terracotta-700 hover:bg-terracotta-800 text-cream-50 py-3 rounded-xl text-xs font-bold transition flex items-center justify-center gap-2">
+                        <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                        <span>এই কাঁথাটি ব্যাগে যোগ করুন</span>
+                    </button>
+                    <button onclick="requestBespokeForProduct()" class="w-full border border-charcoal-900/30 hover:border-gold-500 py-2.5 rounded-xl text-xs text-charcoal-900 font-medium transition">
+                        এই ডিজাইনে কাস্টম সাইজ অর্ডার করুন
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CHECKOUT SIMULATION MODAL -->
+    <div id="checkoutModal" class="fixed inset-0 bg-charcoal-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-cream-50 max-w-lg w-full rounded-2xl shadow-2xl border border-gold-400/40 p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeCheckoutModal()" class="absolute top-5 right-5 text-charcoal-800 hover:text-terracotta-600">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <div class="text-center mb-6">
+                <span class="text-[10px] tracking-widest uppercase text-gold-600 font-bold">256-Bit SSL Encrypted Checkout</span>
+                <h3 class="font-serifBengali text-2xl font-bold text-charcoal-900 mt-1">নিরাপদ চেকআউট</h3>
+            </div>
+
+            <form onsubmit="handlePlaceOrder(event)" class="space-y-4 text-xs">
+                <div>
+                    <label class="block text-charcoal-800 font-semibold mb-1">আপনার পূর্ণ নাম</label>
+                    <input type="text" required placeholder="যেমন: ব্যারিস্টার তানভীর রহমান" class="w-full bg-cream-100 border border-cream-300 rounded-xl px-3.5 py-2.5 text-xs focus:outline-none focus:border-terracotta-600">
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-charcoal-800 font-semibold mb-1">মোবাইল নম্বর</label>
+                        <input type="tel" required placeholder="017XXXXXXXX" class="w-full bg-cream-100 border border-cream-300 rounded-xl px-3.5 py-2.5 text-xs focus:outline-none focus:border-terracotta-600">
+                    </div>
+                    <div>
+                        <label class="block text-charcoal-800 font-semibold mb-1">ইমেইল (সনদ প্রেরণের জন্য)</label>
+                        <input type="email" required placeholder="example@email.com" class="w-full bg-cream-100 border border-cream-300 rounded-xl px-3.5 py-2.5 text-xs focus:outline-none focus:border-terracotta-600">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-charcoal-800 font-semibold mb-1">ডেলিভারি ঠিকানা</label>
+                    <textarea rows="2" required placeholder="বাসা/হোল্ডিং, রোড, এরিয়া, শহর/দেশ..." class="w-full bg-cream-100 border border-cream-300 rounded-xl px-3.5 py-2 text-xs focus:outline-none focus:border-terracotta-600"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-charcoal-800 font-semibold mb-2">পেমেন্ট মেথড নির্বাচন করুন</label>
+                    <div class="grid grid-cols-3 gap-2">
+                        <label class="border border-gold-400 bg-cream-100 p-2.5 rounded-xl cursor-pointer flex flex-col items-center justify-center text-center">
+                            <input type="radio" name="paymentMethod" value="cod" checked class="mb-1 text-terracotta-600">
+                            <span class="font-bold text-[11px]">ক্যাশ অন ডেলিভারি</span>
+                        </label>
+                        <label class="border border-cream-300 hover:border-gold-400 bg-cream-100 p-2.5 rounded-xl cursor-pointer flex flex-col items-center justify-center text-center">
+                            <input type="radio" name="paymentMethod" value="bkash" class="mb-1 text-terracotta-600">
+                            <span class="font-bold text-[11px] text-pink-600">বিকাশ / নগদ</span>
+                        </label>
+                        <label class="border border-cream-300 hover:border-gold-400 bg-cream-100 p-2.5 rounded-xl cursor-pointer flex flex-col items-center justify-center text-center">
+                            <input type="radio" name="paymentMethod" value="card" class="mb-1 text-terracotta-600">
+                            <span class="font-bold text-[11px] text-blue-700">ভিসা / মাস্টারকার্ড</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="p-3 bg-cream-200/60 rounded-xl flex items-center justify-between font-bold text-sm text-charcoal-900">
+                    <span>প্রদেয় সর্বমোট:</span>
+                    <span id="checkoutAmountText" class="text-terracotta-700 font-royalSerif text-lg">৳ ২৪,৫০০</span>
+                </div>
+
+                <button type="submit" class="w-full bg-terracotta-700 hover:bg-terracotta-800 text-cream-50 font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider transition shadow-lg">
+                    অর্ডার নিশ্চিত করুন (Confirm Order)
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div id="toast" class="fixed bottom-6 right-6 bg-charcoal-950 text-cream-50 px-5 py-3.5 rounded-xl border border-gold-400 shadow-2xl z-50 transform translate-y-24 opacity-0 transition-all duration-300 flex items-center gap-3 text-xs max-w-sm">
+        <i data-lucide="check-circle" class="w-5 h-5 text-gold-400 flex-shrink-0"></i>
+        <span id="toastMessage">পণ্যটি আপনার ব্যাগে যুক্ত হয়েছে।</span>
+    </div>
+
+    <!-- JAVASCRIPT: LUXURY LOGIC & INTERACTIONS -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Product Catalog Data
+        const products = [
+            {
+                id: 1,
+                category: 'silk',
+                categoryLabel: 'প্রিমিয়াম তুঁত সিল্ক',
+                title: 'রাজকীয় ময়ূরপঙ্খী সিল্ক নকশী কাঁথা',
+                priceBdt: 24500,
+                priceUsd: 210,
+                artisan: 'মরিয়ম বেগম',
+                location: 'যশোর',
+                hours: 160,
+                rating: 4.9,
+                reviews: 42,
+                size: '৯০" × ১০৮" (King Master)',
+                image: 'https://images.unsplash.com/photo-1607344645866-009c320c5ab8?auto=format&fit=crop&w=800&q=80',
+                description: 'খাঁটি তুঁত রেশমের ৩ স্তরে ময়ূরপঙ্খী নৌকা এবং রাজপ্রাসাদের সুক্ষ্ম ফুলের মোটিফ। ১টি কাঁথা তৈরি করতে লেগেছে ১৬০ কর্মঘণ্টা।'
+            },
+            {
+                id: 2,
+                category: 'cotton',
+                categoryLabel: 'ভিন্টেজ খাদি কটন',
+                title: 'পদ্মপুকুর শতদল খাদি বেডস্প্রেড',
+                priceBdt: 12800,
+                priceUsd: 110,
+                artisan: 'সালমা আক্তার',
+                location: 'জামালপুর',
+                hours: 110,
+                rating: 5.0,
+                reviews: 29,
+                size: '৮৪" × ৯৬" (Queen Quilt)',
+                image: 'https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=800&q=80',
+                description: 'প্রাকৃতিক তাঁতে বোনা খাদি সুতির উপর পদ্ম ও জবা ফুলের বৃত্তাকার আলপনা। গ্রীষ্ম ও শীত উভয় ঋতুতেই অত্যন্ত আরামদায়ক।'
+            },
+            {
+                id: 3,
+                category: 'wallart',
+                categoryLabel: 'দেয়াল নকশী আর্ট',
+                title: 'জীবনতরী হেরিটেজ ফ্রেমড ওয়াল আর্ট',
+                priceBdt: 18500,
+                priceUsd: 160,
+                artisan: 'রাবেয়া খাতুন',
+                location: 'রাজশাহী',
+                hours: 140,
+                rating: 4.8,
+                reviews: 19,
+                size: '৬০" × ৬০" (Tapestry Framed)',
+                image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80',
+                description: 'ড্রয়িংরুমের দেয়াল সাজানোর জন্য বিশেষ রাজকীয় আর্টপিস। নদীর দেশে পালতোলা নাও ও গ্রামীণ জীবনধারার অনিন্দ্য সুন্দর সূচিকর্ম।'
+            },
+            {
+                id: 4,
+                category: 'silk',
+                categoryLabel: 'প্রিমিয়াম তুঁত সিল্ক',
+                title: 'শাহানা গোল্ডেন তসর রয়েল কাঁথা',
+                priceBdt: 28000,
+                priceUsd: 240,
+                artisan: 'আয়েশা বেগম',
+                location: 'যশোর',
+                hours: 180,
+                rating: 5.0,
+                reviews: 35,
+                size: '৯০" × ১০৮" (King Master)',
+                image: 'https://images.unsplash.com/photo-1528458876859-a86d267f5cf4?auto=format&fit=crop&w=800&q=80',
+                description: 'প্রাকৃতিক গোল্ডেন তসর সিল্কের পটভূমিতে লাল ও গাঢ় নীল সুতোর জ্যামিতিক জাল ফোঁড়। রাজকীয় আভিজাত্যের চূড়ান্ত নিদর্শন।'
+            },
+            {
+                id: 5,
+                category: 'baby',
+                categoryLabel: 'বেবি হেরিটেজ সেট',
+                title: 'নরম তুলতুলে অর্গানিক বেবি কাঁথা গিফট সেট',
+                priceBdt: 7500,
+                priceUsd: 65,
+                artisan: 'মমতাজ বেগম',
+                location: 'কুষ্টিয়া',
+                hours: 65,
+                rating: 4.9,
+                reviews: 58,
+                size: '৩৬" × ৪২" (Baby Cot Size - 2 pcs)',
+                image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80',
+                description: '১০০% ভেজালমুক্ত খাঁটি সুতি কাপড়ে শিশুদের ত্বকের উপযোগী নরম ফোঁড়ে তৈরি জোড়া কাঁথা। নবজাতকের জন্য সেরা রাজকীয় উপহার।'
+            },
+            {
+                id: 6,
+                category: 'cotton',
+                categoryLabel: 'ভিন্টেজ খাদি কটন',
+                title: 'নীল-পদ্ম ড্রয়িংরুম লাক্সারি থ্রো',
+                priceBdt: 14200,
+                priceUsd: 125,
+                artisan: 'কোহিনূর বেগম',
+                location: 'জামালপুর',
+                hours: 120,
+                rating: 4.9,
+                reviews: 24,
+                size: '৬০" × ৯০" (Sofa Throw / Single)',
+                image: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&w=800&q=80',
+                description: 'সোফার ওপর বিছিয়ে রাখার জন্য ডিজাইন করা বিশেষ নীল-পদ্ম থ্রো। যেকোনো আধুনিক রুচিশীল অন্দরসজ্জায় আনে রাজকীয় আবহ।'
+            }
+        ];
+
+        // State variables
+        let currentCurrency = 'BDT'; // 'BDT' or 'USD'
+        let currentLanguage = 'BN';  // 'BN' or 'EN'
+        let currentFilter = 'all';
+        let currentQvProduct = null;
+        let cart = [
+            {
+                productId: 1,
+                quantity: 1
+            }
+        ];
+
+        // Bespoke Configurator State
+        let bespokeState = {
+            fabric: 'silk',
+            fabricBaseCost: 12000,
+            fabricName: 'তুঁত সিল্ক (Mulberry Silk)',
+            size: 'king',
+            sizeBaseCost: 8500,
+            sizeName: 'কিং মাস্টার (৯০" × ১০৮")',
+            motif: 'ময়ূরপঙ্খী রাজপ্রাসাদ মোটিফ',
+            monogram: ''
+        };
+
+        // Render products into the grid
+        function renderProducts(items) {
+            const grid = document.getElementById('productGrid');
+            if (!grid) return;
+            
+            grid.innerHTML = items.map(p => {
+                const displayPrice = currentCurrency === 'BDT' ? `৳ ${p.priceBdt.toLocaleString()}` : `$ ${p.priceUsd}`;
+                return `
+                <div class="bg-cream-50 rounded-2xl overflow-hidden border border-cream-300 hover:border-gold-500/80 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group">
+                    <div class="relative overflow-hidden aspect-[4/3] bg-charcoal-900 cursor-pointer" onclick="openQuickView(${p.id})">
+                        <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal-950/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        
+                        <!-- Top Badges -->
+                        <div class="absolute top-3 left-3 bg-cream-50/90 backdrop-blur-sm text-terracotta-700 font-bold px-2.5 py-1 rounded-full text-[10px] uppercase tracking-wider shadow">
+                            ${p.categoryLabel}
+                        </div>
+                        <div class="absolute top-3 right-3 bg-charcoal-900/80 backdrop-blur-sm text-gold-300 font-mono text-[10px] px-2 py-0.5 rounded-md flex items-center gap-1">
+                            <i data-lucide="clock" class="w-3 h-3"></i>
+                            <span>${p.hours} ঘণ্টা</span>
+                        </div>
+
+                        <!-- Hover Quick Action -->
+                        <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="text-[11px] text-cream-50 font-medium bg-charcoal-950/80 px-2 py-1 rounded">
+                                কারিগর: ${p.artisan} (${p.location})
+                            </span>
+                            <span class="bg-gold-500 text-charcoal-950 p-1.5 rounded-full">
+                                <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <div class="flex items-center gap-1 text-gold-500 text-xs mb-1">
+                                <i data-lucide="star" class="w-3.5 h-3.5 fill-gold-500"></i>
+                                <span class="font-bold text-charcoal-900">${p.rating}</span>
+                                <span class="text-charcoal-800/60">(${p.reviews} রিভিউ)</span>
+                            </div>
+                            <h3 class="font-serifBengali text-lg font-bold text-charcoal-900 group-hover:text-terracotta-700 transition">
+                                ${p.title}
+                            </h3>
+                            <p class="text-xs text-charcoal-800/70 mt-1 line-clamp-2">
+                                ${p.description}
+                            </p>
+                            <div class="text-[11px] text-gold-700 font-medium mt-2">
+                                মাপ: ${p.size}
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-cream-200 flex items-center justify-between">
+                            <div>
+                                <div class="text-[10px] text-charcoal-800/60 uppercase">মূল্য:</div>
+                                <div class="text-xl font-bold font-royalSerif text-charcoal-900">
+                                    ${displayPrice}
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <button onclick="openQuickView(${p.id})" class="p-2 border border-charcoal-900/30 rounded-xl hover:bg-cream-200 transition" title="বিস্তারিত দেখুন">
+                                    <i data-lucide="eye" class="w-4 h-4"></i>
+                                </button>
+                                <button onclick="addToCart(${p.id})" class="bg-terracotta-700 hover:bg-terracotta-800 text-cream-50 text-xs font-bold px-4 py-2.5 rounded-xl transition flex items-center gap-1.5 shadow">
+                                    <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i>
+                                    <span>ব্যাগ</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                `;
+            }).join('');
+
+            lucide.createIcons();
+        }
+
+        // Filter products
+        function filterProducts(category) {
+            currentFilter = category;
+            
+            // update filter buttons styling
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(b => {
+                b.classList.remove('active-filter', 'bg-charcoal-900', 'text-cream-50');
+                b.classList.add('bg-cream-50', 'text-charcoal-800');
+            });
+            event.currentTarget.classList.add('active-filter', 'bg-charcoal-900', 'text-cream-50');
+            event.currentTarget.classList.remove('bg-cream-50', 'text-charcoal-800');
+
+            if (category === 'all') {
+                renderProducts(products);
+            } else {
+                const filtered = products.filter(p => p.category === category);
+                renderProducts(filtered);
+            }
+        }
+
+        // Quick View Modal functions
+        function openQuickView(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+            currentQvProduct = product;
+
+            document.getElementById('qvImage').src = product.image;
+            document.getElementById('qvCategory').innerText = product.categoryLabel;
+            document.getElementById('qvTitle').innerText = product.title;
+            document.getElementById('qvArtisanBadge').innerText = `মাস্টার কারিগর: ${product.artisan} (${product.location})`;
+            document.getElementById('qvDescription').innerText = product.description;
+            document.getElementById('qvSize').innerText = product.size;
+            document.getElementById('qvHours').innerText = `${product.hours} ঘণ্টা সূচিকর্ম`;
+
+            const priceStr = currentCurrency === 'BDT' ? `৳ ${product.priceBdt.toLocaleString()}` : `$ ${product.priceUsd}`;
+            document.getElementById('qvPrice').innerText = priceStr;
+
+            document.getElementById('quickViewModal').classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function closeQuickView() {
+            document.getElementById('quickViewModal').classList.add('hidden');
+        }
+
+        function addCurrentQvToCart() {
+            if (currentQvProduct) {
+                addToCart(currentQvProduct.id);
+                closeQuickView();
+            }
+        }
+
+        function requestBespokeForProduct() {
+            closeQuickView();
+            window.location.hash = '#bespoke';
+            showToast('কাস্টমাইজেশন সেকশনে রিডাইরেক্ট করা হয়েছে। আপনার পছন্দ অনুযায়ী সাইজ ও নকশা বেছে নিন।');
+        }
+
+        // Cart Drawer Functions
+        function toggleCartDrawer() {
+            const overlay = document.getElementById('cartDrawerOverlay');
+            const drawer = document.getElementById('cartDrawer');
+            if (drawer.classList.contains('translate-x-full')) {
+                overlay.classList.remove('hidden');
+                drawer.classList.remove('translate-x-full');
+                renderCartDrawer();
+            } else {
+                drawer.classList.add('translate-x-full');
+                setTimeout(() => overlay.classList.add('hidden'), 300);
+            }
+        }
+
+        function addToCart(productId) {
+            const existing = cart.find(item => item.productId === productId);
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({ productId, quantity: 1 });
+            }
+            updateCartBadge();
+            const product = products.find(p => p.id === productId);
+            showToast(`'${product ? product.title : 'পণ্য'}' আপনার শপিং ব্যাগে যুক্ত হয়েছে!`);
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.productId !== productId);
+            renderCartDrawer();
+            updateCartBadge();
+        }
+
+        function changeCartQuantity(productId, delta) {
+            const item = cart.find(i => i.productId === productId);
+            if (!item) return;
+            item.quantity += delta;
+            if (item.quantity <= 0) {
+                removeFromCart(productId);
+            } else {
+                renderCartDrawer();
+                updateCartBadge();
+            }
+        }
+
+        function updateCartBadge() {
+            const totalItems = cart.reduce((acc, curr) => acc + curr.quantity, 0);
+            document.getElementById('cartCountBadge').innerText = totalItems;
+            document.getElementById('cartDrawerBadge').innerText = `${totalItems}টি আইটেম`;
+        }
+
+        function renderCartDrawer() {
+            const container = document.getElementById('cartItemsContainer');
+            if (!container) return;
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-12 space-y-3">
+                        <i data-lucide="shopping-bag" class="w-12 h-12 text-cream-300 mx-auto"></i>
+                        <p class="text-sm font-bold text-charcoal-800">আপনার শপিং ব্যাগ বর্তমানে খালি</p>
+                        <p class="text-xs text-charcoal-800/60">আমাদের সিগনেচার কালেকশন থেকে আপনার পছন্দের রাজকীয় কাঁথা বেছে নিন।</p>
+                        <a href="#collections" onclick="toggleCartDrawer()" class="inline-block bg-terracotta-700 text-cream-50 text-xs font-bold px-5 py-2.5 rounded-xl shadow">কালেকশন দেখুন</a>
+                    </div>
+                `;
+                document.getElementById('cartSubtotal').innerText = currentCurrency === 'BDT' ? '৳ ০' : '$ 0';
+                document.getElementById('cartTotal').innerText = currentCurrency === 'BDT' ? '৳ ০' : '$ 0';
+                lucide.createIcons();
+                return;
+            }
+
+            let subtotal = 0;
+            container.innerHTML = cart.map(item => {
+                const product = products.find(p => p.id === item.productId);
+                if (!product) return '';
+                const itemTotal = (currentCurrency === 'BDT' ? product.priceBdt : product.priceUsd) * item.quantity;
+                subtotal += itemTotal;
+                const priceFormatted = currentCurrency === 'BDT' ? `৳ ${(product.priceBdt * item.quantity).toLocaleString()}` : `$ ${product.priceUsd * item.quantity}`;
+
+                return `
+                    <div class="flex items-center gap-3 bg-cream-50 p-3 rounded-xl border border-cream-200">
+                        <img src="${product.image}" alt="${product.title}" class="w-16 h-16 rounded-lg object-cover flex-shrink-0">
+                        <div class="flex-1 min-w-0">
+                            <h4 class="text-xs font-bold text-charcoal-900 truncate">${product.title}</h4>
+                            <div class="text-[10px] text-terracotta-700 font-semibold">${product.artisan} (${product.location})</div>
+                            <div class="text-xs font-bold text-charcoal-900 mt-1">${priceFormatted}</div>
+                        </div>
+                        <div class="flex items-center gap-1.5 bg-cream-200/80 px-2 py-1 rounded-lg">
+                            <button onclick="changeCartQuantity(${product.id}, -1)" class="text-charcoal-800 hover:text-terracotta-700 font-bold text-xs px-1">-</button>
+                            <span class="text-xs font-bold px-1">${item.quantity}</span>
+                            <button onclick="changeCartQuantity(${product.id}, 1)" class="text-charcoal-800 hover:text-terracotta-700 font-bold text-xs px-1">+</button>
+                        </div>
+                        <button onclick="removeFromCart(${product.id})" class="text-charcoal-400 hover:text-rose-600 p-1">
+                            <i data-lucide="trash-2" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                `;
+            }).join('');
+
+            const totalFormatted = currentCurrency === 'BDT' ? `৳ ${subtotal.toLocaleString()}` : `$ ${subtotal}`;
+            document.getElementById('cartSubtotal').innerText = totalFormatted;
+            document.getElementById('cartTotal').innerText = totalFormatted;
+            lucide.createIcons();
+        }
+
+        // Bespoke Atelier Configurator Logic
+        function selectFabric(type, cost) {
+            bespokeState.fabric = type;
+            bespokeState.fabricBaseCost = cost;
+            if (type === 'silk') bespokeState.fabricName = 'তুঁত সিল্ক (Mulberry)';
+            if (type === 'tussar') bespokeState.fabricName = 'তসর বন্য সিল্ক (Wild Tussar)';
+            if (type === 'khadi') bespokeState.fabricName = 'খাদি অর্গানিক কটন (Pure Khadi)';
+
+            // Update styling
+            document.querySelectorAll('.fabric-opt').forEach(el => {
+                el.classList.remove('border-gold-400', 'bg-charcoal-800');
+                el.classList.add('border-charcoal-700', 'bg-charcoal-800/60');
+            });
+            event.currentTarget.classList.add('border-gold-400', 'bg-charcoal-800');
+            event.currentTarget.classList.remove('border-charcoal-700', 'bg-charcoal-800/60');
+
+            updateBespokeCalculation();
+        }
+
+        function selectSize(sizeType, cost) {
+            bespokeState.size = sizeType;
+            bespokeState.sizeBaseCost = cost;
+            if (sizeType === 'king') bespokeState.sizeName = 'কিং মাস্টার (৯০" × ১০৮")';
+            if (sizeType === 'queen') bespokeState.sizeName = 'কুইন বেডস্প্রেড (৮৪" × ৯৬")';
+            if (sizeType === 'tapestry') bespokeState.sizeName = 'ওয়াল আর্ট / থ্রো (৬০" × ৬০")';
+
+            // Update styling
+            document.querySelectorAll('.size-opt').forEach(el => {
+                el.classList.remove('border-gold-400', 'bg-charcoal-800');
+                el.classList.add('border-charcoal-700', 'bg-charcoal-800/60');
+            });
+            event.currentTarget.classList.add('border-gold-400', 'bg-charcoal-800');
+            event.currentTarget.classList.remove('border-charcoal-700', 'bg-charcoal-800/60');
+
+            updateBespokeCalculation();
+        }
+
+        function updateBespokeCalculation() {
+            const motifSelect = document.getElementById('bespokeMotif');
+            bespokeState.motif = motifSelect.options[motifSelect.selectedIndex].text;
+            
+            const monogramInput = document.getElementById('bespokeMonogram').value.trim();
+            bespokeState.monogram = monogramInput;
+
+            const totalBDT = bespokeState.fabricBaseCost + bespokeState.sizeBaseCost + (monogramInput ? 1500 : 0);
+            const totalUSD = Math.round(totalBDT / 115);
+
+            document.getElementById('summaryFabric').innerText = bespokeState.fabricName;
+            document.getElementById('summarySize').innerText = bespokeState.sizeName;
+            document.getElementById('summaryMotif').innerText = bespokeState.motif;
+            document.getElementById('summaryMonogram').innerText = monogramInput ? `"${monogramInput}"` : 'উপলব্ধ (নাম বা তারিখ)';
+
+            const priceDisplay = currentCurrency === 'BDT' ? `৳ ${totalBDT.toLocaleString()}` : `$ ${totalUSD}`;
+            document.getElementById('bespokeTotalPrice').innerText = priceDisplay;
+        }
+
+        function submitBespokeRequest() {
+            showToast('আপনার বেসপোক কাস্টম আর্টের আবেদন গৃহীত হয়েছে! আমাদের কিউরেটর শীঘ্রই যোগাযোগ করবেন।');
+        }
+
+        // Live Brand Name Customizer (Allows user to preview with their own brand name!)
+        function updateBrandName() {
+            const inputVal = document.getElementById('brandNameInput').value.trim();
+            if (!inputVal) return;
+
+            document.getElementById('brandLogoText').innerText = inputVal;
+            document.getElementById('certBrandTitle').innerText = `${inputVal} হেরিটেজ সনদ`;
+            document.getElementById('footerBrandTitle').innerText = inputVal;
+            document.getElementById('copyrightText').innerText = `© ২০২৬ ${inputVal}. সর্বস্বত্ব সংরক্ষিত।`;
+            showToast(`ব্র্যান্ড নাম সফলভাবে '${inputVal}' এ পরিবর্তন করা হয়েছে!`);
+        }
+
+        // Currency Toggle (BDT <-> USD)
+        function toggleCurrency() {
+            if (currentCurrency === 'BDT') {
+                currentCurrency = 'USD';
+                document.getElementById('currencyBtn').innerText = 'মুদ্রা: $ USD';
+            } else {
+                currentCurrency = 'BDT';
+                document.getElementById('currencyBtn').innerText = 'মুদ্রা: ৳ BDT';
+            }
+            renderProducts(currentFilter === 'all' ? products : products.filter(p => p.category === currentFilter));
+            renderCartDrawer();
+            updateBespokeCalculation();
+        }
+
+        // Language Switcher Demonstration
+        function toggleLanguage() {
+            if (currentLanguage === 'BN') {
+                currentLanguage = 'EN';
+                document.getElementById('langBtn').innerText = 'বাংলা';
+                document.getElementById('announcementText').innerText = "Every Kantha includes an Heirloom Certificate of Authenticity signed by the Master Artisan • Free Worldwide Courier & Luxury Wooden Gift Box";
+                showToast('Switched demo text to Luxury English Atelier mode.');
+            } else {
+                currentLanguage = 'BN';
+                document.getElementById('langBtn').innerText = 'English';
+                document.getElementById('announcementText').innerText = "প্রতিটি কাঁথার সাথে প্রদান করা হয় মাস্টার কারিগরের স্বাক্ষর সংবলিত 'হেরিটেজ অথেন্টিসিটি সার্টিফিকেট' • ফ্রি হোম ডেলিভারি ও প্রিমিয়াম উডেন গিফট বক্স";
+                showToast('বাংলা ভাষা মোডে সফলভাবে প্রত্যাবর্তিত।');
+            }
+        }
+
+        // Search Modal Functions
+        function toggleSearchModal() {
+            const modal = document.getElementById('searchModal');
+            modal.classList.toggle('hidden');
+            if (!modal.classList.contains('hidden')) {
+                document.getElementById('searchInput').focus();
+            }
+        }
+
+        function quickSearch(term) {
+            document.getElementById('searchInput').value = term;
+            handleSearch(term);
+        }
+
+        function handleSearch(term) {
+            const resultsContainer = document.getElementById('searchResultsList');
+            const cleanTerm = term.toLowerCase().trim();
+            if (!cleanTerm) {
+                resultsContainer.innerHTML = '';
+                return;
+            }
+
+            const matches = products.filter(p => 
+                p.title.toLowerCase().includes(cleanTerm) ||
+                p.categoryLabel.toLowerCase().includes(cleanTerm) ||
+                p.artisan.toLowerCase().includes(cleanTerm) ||
+                p.description.toLowerCase().includes(cleanTerm)
+            );
+
+            if (matches.length === 0) {
+                resultsContainer.innerHTML = '<p class="text-xs text-charcoal-400 py-2">কোনো মেলেনি। অন্য শব্দ দিয়ে খুঁজে দেখুন।</p>';
+                return;
+            }
+
+            resultsContainer.innerHTML = matches.map(p => `
+                <div class="flex items-center justify-between p-2 rounded-lg hover:bg-cream-200 cursor-pointer transition" onclick="openQuickView(${p.id}); toggleSearchModal();">
+                    <div class="flex items-center gap-3">
+                        <img src="${p.image}" class="w-10 h-10 rounded-md object-cover">
+                        <div>
+                            <div class="text-xs font-bold text-charcoal-900">${p.title}</div>
+                            <div class="text-[10px] text-terracotta-700">${p.categoryLabel} • কারিগর: ${p.artisan}</div>
+                        </div>
+                    </div>
+                    <div class="text-xs font-bold text-charcoal-900 font-royalSerif">
+                        ${currentCurrency === 'BDT' ? `৳ ${p.priceBdt.toLocaleString()}` : `$ ${p.priceUsd}`}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Mobile Nav Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // FAQ Toggle
+        function toggleFaq(id) {
+            const el = document.getElementById(id);
+            const icon = document.getElementById(`${id}-icon`);
+            el.classList.toggle('hidden');
+            if (el.classList.contains('hidden')) {
+                icon.classList.remove('rotate-180');
+            } else {
+                icon.classList.add('rotate-180');
+            }
+        }
+
+        // Checkout Modal Functions
+        function openCheckoutModal() {
+            if (cart.length === 0) {
+                showToast('আপনার ব্যাগ খালি! দয়া করে পণ্য যোগ করুন।');
+                return;
+            }
+            toggleCartDrawer();
+            const total = document.getElementById('cartTotal').innerText;
+            document.getElementById('checkoutAmountText').innerText = total;
+            document.getElementById('checkoutModal').classList.remove('hidden');
+        }
+
+        function closeCheckoutModal() {
+            document.getElementById('checkoutModal').classList.add('hidden');
+        }
+
+        function handlePlaceOrder(e) {
+            e.preventDefault();
+            closeCheckoutModal();
+            cart = [];
+            updateCartBadge();
+            renderCartDrawer();
+            showToast('🎉 অভিনন্দন! আপনার রাজকীয় অর্ডারটি গৃহীত হয়েছে। খুব শীঘ্রই কনসিয়ার্জ টিম যোগাযোগ করবে।');
+        }
+
+        function handleNewsletterSubmit(e) {
+            e.preventDefault();
+            document.getElementById('newsletterEmail').value = '';
+            showToast('ধন্যবাদ! ভিআইপি লুকবুক ও ভাউচার আপনার ইমেইলে প্রেরণ করা হয়েছে।');
+        }
+
+        function previewCertificateDemo() {
+            const cert = document.getElementById('certificateCard');
+            cert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            cert.classList.add('ring-4', 'ring-gold-400');
+            setTimeout(() => cert.classList.remove('ring-4', 'ring-gold-400'), 1500);
+            showToast('ঐতিহাসিক অথেন্টিসিটি সনদের লাইভ প্রিভিউ প্রদর্শিত হচ্ছে।');
+        }
+
+        function showCareModal() {
+            showToast('কাঁথা সংরক্ষণ গাইডলাইন পেজে স্ক্রোল করা হচ্ছে...');
+            window.location.hash = '#craftsmanship';
+        }
+
+        function openNewsletterModal() {
+            window.location.hash = '#bespoke';
+        }
+
+        // Global Toast Notification System
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMessage').innerText = message;
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0');
+                toast.classList.remove('translate-y-0', 'opacity-100');
+            }, 3800);
+        }
+
+        // Initialize Page
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts(products);
+            updateCartBadge();
+            updateBespokeCalculation();
+        });
+    </script>
+</body>
+</html>
